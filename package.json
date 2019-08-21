@@ -16,6 +16,9 @@
   "bugs": {
     "url": "https://github.com/ArthurKimGl19/Arthur_Kim_Product_Detail_Component/issues"
   },
+  "devDependencies": {
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+  },
   "homepage": "https://github.com/ArthurKimGl19/Arthur_Kim_Product_Detail_Component#readme",
   "dependencies": {
     "@babel/cli": "^7.5.5",
