@@ -36,6 +36,11 @@ const pantsAdjectives = [
 const pantsSize = [
   '00', '0', '2', '4', '6', '8', '10', '12', '14', '16'
 ]
+const reviewStarImages = [
+  '5 Star Image', '4.5 Star Image', '4 Star Image', '3.5 Star Image',
+  '3 Star Image', '2.5 Star Image', '2 Star Image', '1.5 Star Image',
+  '1 Star Image', '0.5 Star Image', '0 Star Image'
+]
 const colors = [
   'Black', 'Blue', 'Brown', 'Gray', 'Green', 
   'Orange', 'Pink', 'Purple', 'Red', 'White', 
@@ -74,8 +79,12 @@ module.exports = {
   pantsSubcategory,
   pantsAdjectives,
   pantsSize,
+  reviewStarImages,
+  colors,
+  colorImages,
   fit,
   beddingSubcategory,
   beddingSize,
-  beddingAdjectives
+  beddingAdjectives,
+  designers
 }

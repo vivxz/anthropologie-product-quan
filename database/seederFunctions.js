@@ -42,6 +42,18 @@ const generateRandomNumber = (min, max) => {
 const getRandomArbitraryStarCount = (min, max) => {
   return (Math.random() * (max - min) + min).toFixed(1);
 }
+// //filter through file images and match with id
+// const filterImageFolder = (imageArray, id) => {
+//   let titleNumber = title.split('_')[0];
+//   let storage = [];
+
+//   for (var i = 0; i < imageArray.length; i++){
+//     if (imageArray[i].indexOf(titleNumber) !== -1){
+//       storage.push(array[i])
+//     }
+//   }
+//   return storage;
+// }
 
 module.exports = {
   generateProductNames,
