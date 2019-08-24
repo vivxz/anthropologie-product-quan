@@ -47,6 +47,7 @@ const createDresses = () => {
     document.onlineExclusive = generateRandomValue([true, false]);
     document.reviewStarCount = getRandomArbitraryStarCount(0, 5);
     document.reviewStarImages = reviewStarImages;
+    document.reviewCount = generateRandomNumber(5, 40);
     document.colors = colors;
     document.colorImages = colorImages;
     document.fit = fit;
