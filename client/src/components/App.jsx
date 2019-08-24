@@ -1,4 +1,7 @@
 import React from 'react';
+import MainPictureDisplay from './MainPictureDisplay.jsx';
+import PictureList from './PictureList.jsx';
+import ProductInfo from './ProductInfo.jsx';
 
 class App extends React.Component{
   constructor(props){
@@ -11,6 +14,9 @@ class App extends React.Component{
     return (
       <div>
         App
+        <PictureList />
+        <MainPictureDisplay />
+        <ProductInfo />
       </div>
     )
   }

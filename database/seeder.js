@@ -26,6 +26,7 @@ const {
   getRandomArbitraryStarCount
 } = require('./seederFunctions.js')
 const fs = require('fs');
+const path = require('path');
 
 let dressesArr = generateProductNames(productBrandName, dressAdjectives, dressSubcategory, 0, 26);
 let pantsArr = generateProductNames(productBrandName, pantsAdjectives, pantsSubcategory, 0, 26);
@@ -122,7 +123,7 @@ const createBedding = () => {
   }
 }
 
-fs.readdir('./productImages', (err, files) => {
+fs.readdir(path.join(__dirname, './productImages'), (err, files) => {
   files.forEach(file => {
     fileNames.push(file)
   })
