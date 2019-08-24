@@ -126,6 +126,9 @@ fs.readdir('./productImages', (err, files) => {
   files.forEach(file => {
     fileNames.push(file)
   })
+  if (err){
+    console.log('error', err)
+  }
 createDresses();
 createPants();
 createSkirts();
