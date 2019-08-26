@@ -14,7 +14,7 @@ const productBrandName = [
 ]
 //product subcategories
 const dressSubcategory = [
-  'Maxi Dress', 'Midi Dress', 'Mini Dress', 'Jumpsuit', 'Sheath Dress', 
+  'Maxi Dress', 'Midi Dress', 'Mini Dress', 'Maxi Jumpsuit', 'Sheath Dress', 
   'Pleated Dress'
 ]
 const dressAdjectives = [
