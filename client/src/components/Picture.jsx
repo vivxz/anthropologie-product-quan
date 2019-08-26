@@ -1,9 +1,9 @@
 import React from 'react';
 
-let Picture = () => {
+let Picture = ({ picture }) => {
   return (
-    <div>
-      Picture!
+    <div className='picture'>
+      <img src={`${picture}`}></img>
     </div>
   )
 }

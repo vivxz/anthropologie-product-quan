@@ -1,9 +1,9 @@
 import React from 'react';
 
-let MainPictureDisplay = () => {
+let MainPictureDisplay = ({ mainPicture }) => {
   return (
-    <div>
-      MainPictureDisplay
+    <div className='main-picture'>
+      <img src={`${mainPicture}`}></img>
     </div>
   )
 }
