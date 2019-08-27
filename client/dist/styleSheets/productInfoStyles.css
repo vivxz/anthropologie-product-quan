@@ -75,6 +75,11 @@
   outline-offset: -1px; 
 }
 /*Size List Component */
+#size-clicked {
+  border-color: #167a92;
+  color: #167a92; 
+  /* outline-style: auto;  */
+}
 .size-list,
 .product-color .fit-container {
   padding-bottom: 15px;

@@ -6,15 +6,26 @@ class ProductColorSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      clickedFit: 'standard-fit'
+      clickedFit: 'standard-fit',
+      clickedSize: ''
     }
     this.clickFitChange = this.clickFitChange.bind(this);
+    this.clickSizeChange = this.clickSizeChange.bind(this);
   }
   clickFitChange(e) {
     document.getElementById('fit-clicked').removeAttribute('id'); 
-    document.getElementsByClassName(`${event.target.className}`)[0].setAttribute('id', 'fit-clicked')
+    document.getElementsByClassName(`${e.target.className}`)[0].setAttribute('id', 'fit-clicked');
     this.setState({
       clickedFit: e.target.className
+    })
+  }
+  clickSizeChange(e){
+    if (this.state.clickedSize.length !== 0){
+      document.getElementById('size-clicked').removeAttribute('id');
+    }
+    document.getElementsByClassName(`${e.target.className}`)[0].setAttribute('id', 'size-clicked');
+    this.setState({
+      clickedSize: e.target.className
     })
   }
   render() {
@@ -33,7 +44,7 @@ class ProductColorSection extends React.Component {
       sizes = sizePlus;
       sizesOutofStock = sizePlusUnavailable;
     }
-
+    
     if (this.props.pictureData) {
       return (
         <div className='product-color'>
@@ -58,7 +69,7 @@ class ProductColorSection extends React.Component {
           </div>
           <div className='size-container'>
             <div className='size'>SIZE: </div>
-            <SizeList sizes={sizes} sizesUnavailable={sizesOutofStock} />
+            <SizeList sizes={sizes} sizesUnavailable={sizesOutofStock} clickSizeChange={this.clickSizeChange}/>
             <div className='subclass'>
               <SizeGuides />
               <div className='divider'>|</div>
