@@ -10,10 +10,14 @@
   /* height: auto;
   width: auto; */
   max-width: 100px;
-  max-height: auto;
+  max-height: 120px;
   padding: 0px 2px 2px 2px;
 }
 .mainpicture img {
   max-height: 25%;
   padding-left: 4%;
+}
+.main-picture .caption {
+  font-style: italic;
+  color: #5c5c5f;
 }

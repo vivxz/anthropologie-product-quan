@@ -53,7 +53,7 @@ class App extends React.Component {
         <div className='product-header'>
           <div className='start'>Clothing</div>
           <div className='backslash'>/</div>
-          <div>{productCategory}</div>
+          <div className='product-category'>{productCategory}</div>
           <div className='backslash'>/</div>
           <div>{productName}</div>
         </div>

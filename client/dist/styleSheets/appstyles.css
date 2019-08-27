@@ -1,11 +1,14 @@
+body {
+  font-weight: 300; 
+  font-family: "Avenir LT W02 45 Book",sans-serif;
+  letter-spacing: .06rem;
+  font-size: 12px;
+}
 .app-body {
   padding: 3.5% 3.5% 10%
 }
 .app-body .product-header {
   display: flex;
-  font-family: "Avenir LT W02 45 Book",sans-serif;
-  letter-spacing: .06rem;
-  font-size: 12px;
   padding-bottom: 2%;
 }
 .app-body .product-header .start {
@@ -13,6 +16,10 @@
 }
 .app-body .product-header .backslash {
   padding: 0% 1.5%;
+}
+.app-body .product-header .product-category:hover {
+  cursor: pointer;
+  color: #167a92;
 }
 .app-body-product,
 .app-body-product .images-container {
