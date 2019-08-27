@@ -6,16 +6,22 @@ var SizeList = ({ sizes, sizesUnavailable }) => {
      {sizes.map((size, index) => {
        if (index === 0){
          return (
-           <div className='first' key={index}>{size}</div>
+           <div className='container' key={index}>
+            <div className='first'>{size}</div>
+           </div>
          )
        } else if (size === sizesUnavailable){
          return (
-           <div className='unavailable' key={index}>{size}</div>
+          <div className='container' key={index}>
+           <div className='unavailable'>{size}</div>
+          </div>
          )
        } 
        else {
          return (
-           <div className='available' key={index}>{size}</div>
+          <div className='container' key={index}>
+           <div className='available'>{size}</div>
+          </div>
          )
        }
      })}

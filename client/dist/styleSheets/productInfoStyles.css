@@ -38,7 +38,8 @@
 .product-title .star-reviews,
 .product-color .color-container,
 .size-list,
-.product-color .size-container .subclass {
+.product-color .size-container .subclass,
+.product-color .fit-container .subclass {
   display: flex;
 }
 .product-title .star-count {
@@ -63,11 +64,13 @@
   padding-bottom: 10px;
 }
 .product-color .size-container .size,
-.product-color .quantity-container .quantity {
+.product-color .quantity-container .quantity,
+.product-color .fit-container .fit {
   padding-bottom: 5px;
 }
 /*Size List Component */
-.size-list {
+.size-list,
+.product-color .fit-container {
   padding-bottom: 15px;
 }
 .size-list .first,
@@ -82,9 +85,8 @@
   border-width: 0.5px;
   margin: 0 2.5px 0 0px;
 }
-.size-list .unavailable,
-.size-list .available {
-  margin-left: 2.5px;
+.size-list .container {
+  margin-right: 5px;
 }
 .size-list .unavailable,
 .product-color .size-container .subclass .divider {
@@ -99,6 +101,17 @@
   text-decoration: underline;
   cursor: pointer;
 }
+.product-color .fit-container .subclass .subcontainer .standard-fit:hover,
+.product-color .fit-container .subclass .subcontainer .petite-fit:hover,
+.product-color .fit-container .subclass .subcontainer .plus-fit:hover,
+.size-list .container .first:hover,
+.size-list .container .unavailable:hover,
+.size-list .container .available:hover {
+  border-color: #167a92;
+  color: #167a92;
+  cursor: pointer;
+}
+
 .product-color .size-container .subclass .divider,
 .product-color .size-container .subclass .customers-say {
   padding-left: 12px;
@@ -177,4 +190,21 @@
 .product-ship .dotted {
   border: none;
   border-top: 1px dotted #ccc;
+}
+.product-color .fit-container .subclass .standard-fit,
+.product-color .fit-container .subclass .petite-fit,
+.product-color .fit-container .subclass .plus-fit {
+  padding: 12px 11px 12px 11px;
+  vertical-align: middle;
+  text-align: center;
+  border-style: solid;
+  border-color: #ccc;
+  border-width: 0.5px;
+  margin: 0 2.5px 0 0px;
+  width: 167px;
+}
+.product-color .fit-container .subclass .subcontainer,
+.product-color .fit-container .subclass .subcontainer,
+.product-color .fit-container .subclass .subcontainer{
+  margin-right: 5px;
 }

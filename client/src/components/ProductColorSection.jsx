@@ -2,47 +2,84 @@ import React from 'react';
 import SizeList from './SizeList.jsx';
 import SizeGuides from './SizeGuides.jsx';
 
-var ProductColorSection = ({ pictureData }) => {
-  let { colors, colorImages, fit, sizeStandard, sizesUnavailable } = pictureData;
-  let quantity = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  if (pictureData) {
-    return (
-      <div className='product-color'>
-        <div className='color-container'>
-          <div className='color'>COLOR: </div>
-          <div className='type'>{colors[0]}</div>
-        </div>
-        <div className='color-image'>C IMG</div>
-        <div className='fit-container'>
-          <div className='standard-fit'>Standard</div>
-          <div className='petite-fit'>Standard</div>
-          <div className='plus-fit'>Standard</div>
-        </div>
-        <div className='size-container'>
-          <div className='size'>SIZE: </div>
-          {/* <SizeList sizes={sizes} sizesUnavailable={sizesUnavailable} /> */}
-          <div className='subclass'>
-            <SizeGuides />
-            <div className='divider'>|</div>
-            <div className='customers-say'>Customers say True to Size</div>
+class ProductColorSection extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      clickedFit: 'standard-fit'
+    }
+    this.clickFitChange = this.clickFitChange.bind(this);
+  }
+  clickFitChange(e) {
+    this.setState({
+      clickedFit: e.target.className
+    }, () => console.log('event target className', this.state.clickedFit))
+  }
+  render() {
+    let { colors, colorImages, fit, sizeStandard, sizesUnavailable,
+      sizePetite, sizePetiteUnavailable, sizePlus, sizePlusUnavailable
+    } = this.props.pictureData;
+    let quantity = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let sizes, sizesOutofStock;
+    if (this.state.clickedFit === 'standard-fit') {
+      sizes = sizeStandard;
+      sizesOutofStock = sizesUnavailable;
+    } else if (this.state.clickedFit === 'petite-fit') {
+      sizes = sizePetite;
+      sizesOutofStock = sizePetiteUnavailable;
+    } else if (this.state.clickedFit === 'plus-fit') {
+      sizes = sizePlus;
+      sizesOutofStock = sizePlusUnavailable;
+    }
+
+    if (this.props.pictureData) {
+      return (
+        <div className='product-color'>
+          <div className='color-container'>
+            <div className='color'>COLOR: </div>
+            <div className='type'>{colors[0]}</div>
+          </div>
+          <div className='color-image'>C IMG</div>
+          <div className='fit-container'>
+            <div className='fit'>FIT: </div>
+            <div className='subclass'>
+              <div className='subcontainer'>
+                <div className='standard-fit' onClick={this.clickFitChange}>Standard</div>
+              </div>
+              <div className='subcontainer'>
+                <div className='petite-fit' onClick={this.clickFitChange}>Petite</div>
+              </div>
+              <div className='subcontainer'>
+                <div className='plus-fit' onClick={this.clickFitChange}>Plus</div>
+              </div>
+            </div>
+          </div>
+          <div className='size-container'>
+            <div className='size'>SIZE: </div>
+            <SizeList sizes={sizes} sizesUnavailable={sizesOutofStock} />
+            <div className='subclass'>
+              <SizeGuides />
+              <div className='divider'>|</div>
+              <div className='customers-say'>Customers say True to Size</div>
+            </div>
+          </div>
+          <div className='quantity-container'>
+            <div className='quantity'>QTY: </div>
+            <select className='select'>
+              {quantity.map(number => {
+                return (
+                  <option key={number}>{number}</option>
+                )
+              })}
+            </select>
           </div>
         </div>
-        <div className='quantity-container'>
-          <div className='quantity'>QTY: </div>
-          <select className='select'>
-            {quantity.map(number => {
-              return (
-                <option>{number}</option>
-              )
-            })}
-          </select>
-        </div>
-      </div>
-    )
-  } else {
-    return (
-      <div></div>
-    )
+      )
+    } else {
+      return (
+        <div></div>
+      )
+    }
   }
 }
 
