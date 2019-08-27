@@ -8,7 +8,7 @@
 }
 .product-title .name {
   font-size: 22px;
-  letter-spacing: .11rem;
+  letter-spacing: 0.11rem;
   font-weight: 500;
 }
 .product-title .price,
@@ -29,7 +29,7 @@
 .product-title .review-count:hover {
   cursor: pointer;
   text-decoration: underline;
-} 
+}
 .product-title .exclusive,
 .product-title .star-reviews {
   color: #5c5c5f;
@@ -64,8 +64,7 @@
   padding-bottom: 10px;
 }
 .product-color .size-container .size,
-.product-color .quantity-container .quantity
-{
+.product-color .quantity-container .quantity {
   padding-bottom: 5px;
 }
 
@@ -94,7 +93,7 @@
   color: #ccc;
 }
 .product-color .size-container .subclass {
-  color: #167a92;  
+  color: #167a92;
   margin-bottom: 20px;
 }
 .size-guides:hover,
@@ -118,26 +117,27 @@
 .product-color .quantity-container {
   margin-bottom: 30px;
 }
-hr {
+.product-info .non-dotted {
   display: block;
   height: 1px;
   border: 0;
   border-top: 1px solid #ccc;
   margin: 1em 0;
   padding: 0;
+  width: 100%;
 }
 /*Product Ship Section*/
 .product-ship .ship-item,
-.product-ship .pick-up .container {
-  display: flex
+.product-ship .pick-up .container,
+.product-ship .ship-item .input,
+.product-ship .pick-up .container .input,
+.product-ship .add .container {
+  display: flex;
 }
 .product-ship .ship-item .caption,
 .product-ship .pick-up .caption {
   padding-left: 10px;
-  margin-top: 3px;
-}
-.product-ship .pick-up .caption {
-  margin-bottom: 10px;
+  margin: 3px 0;
 }
 .product-ship .ship-item {
   padding-bottom: 5px;
@@ -145,6 +145,38 @@ hr {
 .product-ship .pick-up {
   padding-bottom: 20px;
 }
+.product-ship .pick-up .caption {
+  color: lightgrey;
+  padding-bottom: 10px;
+}
 .product-ship .pick-up .select-size {
   padding-left: 28px;
+}
+.product-ship .add .basket-button {
+  width: 100%;
+  padding: 14px 10px 13px;
+  margin-bottom: 20px;
+  border: 1px solid #4b5666;
+  text-align: center;
+  background: #4b5666;
+  color: #fff;
+  cursor: pointer;
+}
+.product-ship .add .container {
+  color: #167a92;
+}
+.product-ship .add .container .registry:hover,
+.product-ship .add .container .wishlist:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.product-ship .add .container .registry,
+.product-ship .add .container .wishlist {
+  margin: 10px 0px 30px;
+  padding: 0 10px;
+}
+
+.product-ship .dotted {
+  border: none;
+  border-top: 1px dotted #ccc;
 }
