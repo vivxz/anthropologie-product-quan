@@ -7,9 +7,13 @@ const {
   dressAdjectives,
   skirtSubcategory,
   dressSkirtSize,
+  dressSkirtSizePetite,
+  dressSkirtSizePlus,
   pantsSubcategory,
   pantsAdjectives,
   pantsSize,
+  pantsSizePetite,
+  pantsSizePlus,
   reviewStarImages,
   colors,
   colorImages,
@@ -52,8 +56,12 @@ const createDresses = () => {
     document.colors = colors;
     document.colorImages = colorImages;
     document.fit = fit;
-    document.sizes = dressSkirtSize;
+    document.sizeStandard = dressSkirtSize;
+    document.sizePetite = dressSkirtSizePetite;
+    document.sizePlus = dressSkirtSizePlus;
     document.sizesUnavailable = generateRandomValue(dressSkirtSize);
+    document.sizePetiteUnavailable = generateRandomValue(dressSkirtSizePetite);
+    document.sizePlusUnavailable = generateRandomValue(dressSkirtSizePlus);
     document.image = fileNames;
     storage.push(document);
     document = {};
@@ -73,8 +81,12 @@ const createPants = () => {
     document.colors = colors;
     document.colorImages = colorImages;
     document.fit = fit;
-    document.sizes = pantsSize;
+    document.sizeStandard = pantsSize;
+    document.sizePetite = pantsSizePetite;
+    document.sizePlus = pantsSizePlus;
     document.sizesUnavailable = generateRandomValue(pantsSize);
+    document.sizePetiteUnavailable = generateRandomValue(pantsSizePetite);
+    document.sizePlusUnavailable = generateRandomValue(pantsSizePlus);
     document.image = fileNames;
     storage.push(document);
     document = {};
@@ -94,8 +106,12 @@ const createSkirts = () => {
     document.colors = colors;
     document.colorImages = colorImages;
     document.fit = fit;
-    document.sizes = dressSkirtSize;
+    document.sizeStandard = dressSkirtSize;
+    document.sizePetite = dressSkirtSizePetite;
+    document.sizePlus = dressSkirtSizePlus;
     document.sizesUnavailable = generateRandomValue(dressSkirtSize);
+    document.sizePetiteUnavailable = generateRandomValue(dressSkirtSizePetite);
+    document.sizePlusUnavailable = generateRandomValue(dressSkirtSizePlus);
     document.image = '';
     storage.push(document);
     document = {};
@@ -115,8 +131,12 @@ const createBedding = () => {
     document.colors = colors;
     document.colorImages = colorImages;
     document.fit = fit;
-    document.sizes = beddingSize;
+    document.sizeStandard = beddingSize;
+    document.sizePetite = [''];
+    document.sizePlus = [''];
     document.sizesUnavailable = generateRandomValue(beddingSize);
+    document.sizePetiteUnavailable = '';
+    document.sizePlusUnavailable = '';
     document.image = fileNames;
     storage.push(document);
     document = {};

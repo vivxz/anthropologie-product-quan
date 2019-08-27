@@ -6,6 +6,9 @@
   padding-right: 3%;
   /* width: 30px; */
 }
+.picture {
+  margin: 5px 5px;
+}
 .picture img {
   /* height: auto;
   width: auto; */
@@ -14,7 +17,7 @@
   padding: 0px 2px 2px 2px;
 }
 .mainpicture img {
-  max-height: 25%;
+  max-height: 60px;
   padding-left: 4%;
 }
 .main-picture .caption {

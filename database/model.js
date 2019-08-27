@@ -14,8 +14,12 @@ let productDetailSchema = new mongoose.Schema({
   colors: [String],
   colorImages: [String],
   fit: [String],
-  sizes: [String],
+  sizeStandard: [String],
+  sizePetite: [String],
+  sizePlus: [String],
   sizesUnavailable: String,
+  sizePetiteUnavailable: String,
+  sizePlusUnavailable: String,
   image: [String]
 })
 
