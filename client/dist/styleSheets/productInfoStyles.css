@@ -1,3 +1,45 @@
 .product-info {
-  padding-left: 8%;
+  padding-left: 25px;
+}
+.product-title div {
+  margin: 5px 0px 5px;
+  font-size: 13px;
+}
+.product-title .name {
+  font-size: 22px;
+  letter-spacing: .11rem;
+  font-weight: 500;
+}
+.product-title .price,
+.product-title .payment {
+  font-size: 16px;
+}
+.product-title .payment,
+.product-title .brand-name {
+  margin-bottom: 10px;
+}
+.product-title .brand-name,
+.product-title .review-count {
+  color: #167a92;
+}
+.product-title .brand-name:hover {
+  cursor: pointer;
+}
+.product-title .review-count:hover {
+  cursor: pointer;
+  text-decoration: underline;
+} 
+.product-title .exclusive,
+.product-title .star-reviews {
+  color: #5c5c5f;
+  margin-bottom: 25px;
+}
+.product-title .star-reviews {
+  display: flex;
+}
+.product-title .star-count {
+  margin-left: 5px;
+}
+.product-title .review-count {
+  margin-left: 10px;
 }

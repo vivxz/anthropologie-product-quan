@@ -63,7 +63,7 @@ class App extends React.Component {
             <MainPictureDisplay mainPicture={this.state.mainPicture}/>
           </div>
           <div className='product-info'>
-            <ProductInfo />
+            <ProductInfo pictureData={this.state.pictureData}/>
           </div>
         </div>
       </div>
