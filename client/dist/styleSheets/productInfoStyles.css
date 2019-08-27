@@ -1,6 +1,7 @@
 .product-info {
   padding-left: 25px;
 }
+/*Product Title Section */
 .product-title div {
   margin: 5px 0px 5px;
   font-size: 13px;
@@ -34,7 +35,10 @@
   color: #5c5c5f;
   margin-bottom: 25px;
 }
-.product-title .star-reviews {
+.product-title .star-reviews,
+.product-color .color-container,
+.size-list,
+.product-color .size-container .subclass {
   display: flex;
 }
 .product-title .star-count {
@@ -42,4 +46,75 @@
 }
 .product-title .review-count {
   margin-left: 10px;
+}
+
+/*Product Color Section */
+.product-color .color-container {
+  text-transform: uppercase;
+  font-size: 13px;
+}
+.product-color .color-container {
+  color: #26262c;
+  padding-bottom: 5px;
+}
+.product-color .color-container .type {
+  padding-left: 4px;
+}
+.product-color .color-image {
+  padding-bottom: 10px;
+}
+.product-color .size-container .size,
+.product-color .quantity-container .quantity
+{
+  padding-bottom: 5px;
+}
+
+/*Size List Component */
+.size-list {
+  padding-bottom: 15px;
+}
+.size-list .first,
+.size-list .unavailable,
+.size-list .available {
+  padding: 12px 11px 12px 11px;
+  vertical-align: middle;
+  min-width: 18px;
+  text-align: center;
+  border-style: solid;
+  border-color: #ccc;
+  border-width: 0.5px;
+  margin: 0 2.5px 0 0px;
+}
+.size-list .unavailable,
+.size-list .available {
+  margin-left: 2.5px;
+}
+.size-list .unavailable,
+.product-color .size-container .subclass .divider {
+  color: #ccc;
+}
+.product-color .size-container .subclass {
+  color: #167a92;  
+  margin-bottom: 20px;
+}
+.size-guides:hover,
+.product-color .size-container .subclass .customers-say:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.product-color .size-container .subclass .divider,
+.product-color .size-container .subclass .customers-say {
+  padding-left: 12px;
+}
+.product-color .quantity-container .select {
+  width: 100px;
+  height: 40px;
+  margin-bottom: 0;
+  border: 1px solid #939395;
+  background: #fff;
+  font-weight: 600;
+  font-size: 15px;
+}
+.product-color .quantity-container {
+  margin-bottom: 30px;
 }

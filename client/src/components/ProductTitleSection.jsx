@@ -12,13 +12,13 @@ var ProductTitleSection = ({ pictureData }) => {
       <div className='product-title'>
         <div className='name'>{productName}</div>
         <div className='price'>${price}.00</div>
-        <div className='payment'>Or 4 interest-free installments of ${roundedPrice} by afterpay image</div>
+        <div className='payment'>Or 4 interest-free installments of ${roundedPrice} by afterpay image IIModel</div>
         <div className='brand-name'>{brandName}</div>
         <div className='exclusive'>{exclusive}</div>
         <div className='star-reviews'>
           <div className='star-image'>{reviewStarImages[0]}</div>
           <div className='star-count'>{reviewStarCount}</div> 
-          <div className='review-count'>{reviewCount} Review</div>
+          <div className='review-count'>{reviewCount} Reviews</div>
         </div>
       </div>
     )

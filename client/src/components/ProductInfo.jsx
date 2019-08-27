@@ -7,7 +7,7 @@ let ProductInfo = ({ pictureData }) => {
   return (
     <div className='product-info'>
       <ProductTitleSection pictureData={pictureData}/>
-      <ProductColorSection />
+      <ProductColorSection pictureData={pictureData}/>
       <ProductShipSection />
     </div>
   )
