@@ -11,12 +11,14 @@ class ProductColorSection extends React.Component {
     this.clickFitChange = this.clickFitChange.bind(this);
   }
   clickFitChange(e) {
+    document.getElementById('fit-clicked').removeAttribute('id'); 
+    document.getElementsByClassName(`${event.target.className}`)[0].setAttribute('id', 'fit-clicked')
     this.setState({
       clickedFit: e.target.className
-    }, () => console.log('event target className', this.state.clickedFit))
+    })
   }
   render() {
-    let { colors, colorImages, fit, sizeStandard, sizesUnavailable,
+    let { colors, colorImages, sizeStandard, sizesUnavailable,
       sizePetite, sizePetiteUnavailable, sizePlus, sizePlusUnavailable
     } = this.props.pictureData;
     let quantity = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -44,7 +46,7 @@ class ProductColorSection extends React.Component {
             <div className='fit'>FIT: </div>
             <div className='subclass'>
               <div className='subcontainer'>
-                <div className='standard-fit' onClick={this.clickFitChange}>Standard</div>
+                <div className='standard-fit' id='fit-clicked' onClick={this.clickFitChange}>Standard</div>
               </div>
               <div className='subcontainer'>
                 <div className='petite-fit' onClick={this.clickFitChange}>Petite</div>

@@ -68,6 +68,12 @@
 .product-color .fit-container .fit {
   padding-bottom: 5px;
 }
+#fit-clicked {
+  border-color: #167a92;
+  color: #167a92; 
+  outline-style: auto;
+  outline-offset: -1px; 
+}
 /*Size List Component */
 .size-list,
 .product-color .fit-container {
@@ -105,7 +111,6 @@
 .product-color .fit-container .subclass .subcontainer .petite-fit:hover,
 .product-color .fit-container .subclass .subcontainer .plus-fit:hover,
 .size-list .container .first:hover,
-.size-list .container .unavailable:hover,
 .size-list .container .available:hover {
   border-color: #167a92;
   color: #167a92;
@@ -164,7 +169,7 @@
   padding-left: 28px;
 }
 .product-ship .add .basket-button {
-  width: 100%;
+  width: 500px;
   padding: 14px 10px 13px;
   margin-bottom: 20px;
   border: 1px solid #4b5666;
