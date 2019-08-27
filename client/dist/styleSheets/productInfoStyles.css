@@ -118,3 +118,33 @@
 .product-color .quantity-container {
   margin-bottom: 30px;
 }
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+/*Product Ship Section*/
+.product-ship .ship-item,
+.product-ship .pick-up .container {
+  display: flex
+}
+.product-ship .ship-item .caption,
+.product-ship .pick-up .caption {
+  padding-left: 10px;
+  margin-top: 3px;
+}
+.product-ship .pick-up .caption {
+  margin-bottom: 10px;
+}
+.product-ship .ship-item {
+  padding-bottom: 5px;
+}
+.product-ship .pick-up {
+  padding-bottom: 20px;
+}
+.product-ship .pick-up .select-size {
+  padding-left: 28px;
+}

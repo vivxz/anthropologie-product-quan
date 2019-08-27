@@ -8,6 +8,7 @@ let ProductInfo = ({ pictureData }) => {
     <div className='product-info'>
       <ProductTitleSection pictureData={pictureData}/>
       <ProductColorSection pictureData={pictureData}/>
+      <hr ></hr>
       <ProductShipSection />
     </div>
   )
