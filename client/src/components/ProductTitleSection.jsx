@@ -1,7 +1,7 @@
 import React from 'react';
 import { IoIosInformationCircleOutline } from "react-icons/io";
 
-var ProductTitleSection = ({ pictureData }) => {
+var ProductTitleSection = ({ pictureData, afterPay }) => {
   let { brandName, onlineExclusive, price, productName,
     reviewCount, reviewStarCount, reviewStarImages } = pictureData;
   let roundedPrice = (price / 4).toFixed(2);
@@ -13,7 +13,9 @@ var ProductTitleSection = ({ pictureData }) => {
       <div className='product-title'>
         <div className='name'>{productName}</div>
         <div className='price'>${price}.00</div>
-        <div className='payment'>Or 4 interest-free installments of ${roundedPrice} by afterpay image
+        <div className='payment'>
+          <div className='caption'>Or 4 interest-free installments of ${roundedPrice} by</div>
+          <div><img className='after-pay' src={afterPay}></img></div>
           <div className='info-circle'>
             <IoIosInformationCircleOutline className='icon' />
           </div>

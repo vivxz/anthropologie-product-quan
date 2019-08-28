@@ -1,0 +1,72 @@
+#size-clicked {
+  border-color: #167a92;
+  color: #167a92; 
+  /* outline-style: auto;  */
+}
+.size-list,
+.product-color .fit-container {
+  padding-bottom: 15px;
+}
+.size-list .first,
+.size-list .unavailable,
+.size-list .available {
+  padding: 12px 11px 12px 11px;
+  vertical-align: middle;
+  min-width: 18px;
+  text-align: center;
+  border-style: solid;
+  border-color: #ccc;
+  border-width: 0.5px;
+  margin: 0 2.5px 0 0px;
+}
+.size-list .container {
+  margin-right: 5px;
+}
+.size-list .unavailable,
+.product-color .size-container .subclass .divider {
+  color: #ccc;
+}
+.product-color .size-container .subclass {
+  color: #167a92;
+  margin-bottom: 20px;
+}
+.size-guides:hover,
+.product-color .size-container .subclass .customers-say:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.product-color .fit-container .subclass .subcontainer .standard-fit:hover,
+.product-color .fit-container .subclass .subcontainer .petite-fit:hover,
+.product-color .fit-container .subclass .subcontainer .plus-fit:hover,
+.size-list .container .first:hover,
+.size-list .container .available:hover {
+  border-color: #167a92;
+  color: #167a92;
+  cursor: pointer;
+}
+
+.product-color .size-container .subclass .divider,
+.product-color .size-container .subclass .customers-say {
+  padding-left: 12px;
+}
+.product-color .quantity-container .select {
+  width: 100px;
+  height: 40px;
+  margin-bottom: 0;
+  border: 1px solid #939395;
+  background: #fff;
+  font-weight: 600;
+  font-size: 15px;
+}
+.product-color .quantity-container {
+  margin-bottom: 30px;
+}
+.product-info .non-dotted {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+  width: 100%;
+}

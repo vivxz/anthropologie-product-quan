@@ -1,0 +1,27 @@
+.product-color .color-container {
+  text-transform: uppercase;
+}
+.product-color .color-container {
+  color: #000000;
+  padding-bottom: 5px;
+}
+.product-color .color-container .type {
+  color: #5c5c5f;
+}
+.product-color .color-container .type {
+  padding-left: 4px;
+}
+.product-color .color-image {
+  padding-bottom: 10px;
+}
+.product-color .size-container .size,
+.product-color .quantity-container .quantity,
+.product-color .fit-container .fit {
+  padding-bottom: 5px;
+}
+#fit-clicked {
+  border-color: #167a92;
+  color: #167a92; 
+  outline-style: auto;
+  outline-offset: -1px; 
+}

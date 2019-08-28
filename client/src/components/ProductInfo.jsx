@@ -11,10 +11,10 @@ class ProductInfo extends React.Component {
     };
   }
   render(){
-    let { pictureData } = this.props;
+    let { pictureData, afterPay } = this.props;
     return (
       <div className='product-info'>
-        <ProductTitleSection pictureData={pictureData}/>
+        <ProductTitleSection pictureData={pictureData} afterPay={afterPay}/>
         <ProductColorSection pictureData={pictureData}/>
         <hr className='non-dotted' ></hr>
         <ProductShipSection />

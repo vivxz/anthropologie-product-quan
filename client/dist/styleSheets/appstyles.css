@@ -10,6 +10,7 @@ body {
 .app-body .product-header {
   display: flex;
   padding-bottom: 2%;
+  justify-content: center;
 }
 .app-body .product-header .start {
   padding-left: 1%;

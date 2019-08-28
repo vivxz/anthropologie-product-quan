@@ -1,0 +1,78 @@
+.product-info {
+  padding-left: 20px;
+  font-size: 13px;
+}
+.color,
+.fit,
+.size,
+.quantity {
+  font-weight: 500;
+}
+/*Product Title Section */
+.product-title div {
+  margin: 5px 0px 5px;
+}
+.product-title .name {
+  font-size: 22px;
+  letter-spacing: 0.11rem;
+  font-weight: 500;
+}
+.product-title .price {
+  font-size: 16px;
+}
+.product-title .payment {
+  display: flex;
+}
+.product-title .payment .caption {
+  color: #5c5c5f;
+}
+.product-title .payment .after-pay {
+  max-height: 24px;
+  /* margin-top: 5px; */
+  margin-top: -3px;
+}
+.product-title .payment .after-pay:hover{
+  cursor: pointer;
+}
+.product-title .payment .info-circle {
+  margin: 0px 0px;
+  padding-top: 8px;
+  /* margin-top: 9px; */
+}
+.product-title .payment .info-circle .icon:hover {
+  color: #167a92;
+  cursor: pointer;
+}
+.product-title .brand-name {
+  margin-bottom: 10px;
+  width: 80px;
+}
+.product-title .brand-name,
+.product-title .review-count {
+  color: #167a92;
+}
+.product-title .brand-name:hover {
+  cursor: pointer;
+}
+.product-title .review-count:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.product-title .exclusive,
+.product-title .star-reviews {
+  color: #5c5c5f;
+  margin-bottom: 25px;
+}
+.product-title .star-reviews,
+.product-color .color-container,
+.size-list,
+.product-color .size-container .subclass,
+.product-color .fit-container .subclass {
+  display: flex;
+}
+.product-title .star-count {
+  margin-left: 5px;
+}
+.product-title .review-count {
+  margin-left: 10px;
+}

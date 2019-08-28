@@ -1,0 +1,71 @@
+.product-ship .ship-item,
+.product-ship .pick-up .container,
+.product-ship .ship-item .input,
+.product-ship .pick-up .container .input,
+.product-ship .add .container {
+  display: flex;
+}
+.product-ship .ship-item .caption,
+.product-ship .pick-up .caption {
+  padding-left: 10px;
+  margin: 3px 0;
+}
+.product-ship .ship-item {
+  padding-bottom: 5px;
+}
+.product-ship .pick-up {
+  padding-bottom: 20px;
+}
+.product-ship .pick-up .caption {
+  color: lightgrey;
+  padding-bottom: 10px;
+}
+.product-ship .pick-up .select-size {
+  padding-left: 28px;
+  color: #5c5c5f;
+}
+.product-ship .add .basket-button {
+  width: 500px;
+  padding: 14px 10px 13px;
+  margin-bottom: 20px;
+  border: 1px solid #4b5666;
+  text-align: center;
+  background: #4b5666;
+  color: #fff;
+  cursor: pointer;
+}
+.product-ship .add .container {
+  color: #167a92;
+}
+.product-ship .add .container .registry:hover,
+.product-ship .add .container .wishlist:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.product-ship .add .container .registry,
+.product-ship .add .container .wishlist {
+  margin: 10px 0px 30px;
+  padding: 0 10px;
+}
+
+.product-ship .dotted {
+  border: none;
+  border-top: 1px dotted #ccc;
+}
+.product-color .fit-container .subclass .standard-fit,
+.product-color .fit-container .subclass .petite-fit,
+.product-color .fit-container .subclass .plus-fit {
+  padding: 12px 11px 12px 11px;
+  vertical-align: middle;
+  text-align: center;
+  border-style: solid;
+  border-color: #ccc;
+  border-width: 0.5px;
+  margin: 0 2.5px 0 0px;
+  width: 167px;
+}
+.product-color .fit-container .subclass .subcontainer,
+.product-color .fit-container .subclass .subcontainer,
+.product-color .fit-container .subclass .subcontainer{
+  margin-right: 5px;
+}

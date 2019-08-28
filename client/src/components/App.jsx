@@ -13,6 +13,7 @@ const pictureArray = [
   'https://s7d5.scene7.com/is/image/Anthropologie/4130638280064_089_b5?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain',
   'https://s7d5.scene7.com/is/image/Anthropologie/4130638280064_089_b3?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain'
 ];
+const afterPay = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSYF5YkDEGMF8EYXrKBfL0aJOt6guePtglaHrDKQNnXkXPslvX';
 
 class App extends React.Component {
   constructor(props) {
@@ -71,7 +72,7 @@ class App extends React.Component {
             <MainPictureDisplay mainPicture={this.state.mainPicture}/>
           </div>
           <div className='product-info'>
-            <ProductInfo pictureData={this.state.pictureData}/>
+            <ProductInfo pictureData={this.state.pictureData} afterPay={afterPay}/>
           </div>
         </div>
       </div>

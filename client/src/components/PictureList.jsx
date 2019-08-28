@@ -7,8 +7,8 @@ let PictureList = ({ pictureArray, changeMainPicture }) => {
   let topArrow = <div></div>;
   let bottomArrow = <div></div>;
   if (pictureArray.length > 5) {
-    topArrow = <IoIosArrowUp className='arrow' color='lightgray'/>;
-    bottomArrow = <IoIosArrowDown className='arrow' color='lightgray'/>;
+    topArrow = <IoIosArrowUp className='arrow' color='#f4efef'/>;
+    bottomArrow = <IoIosArrowDown className='arrow' color='#f4efef'/>;
   }
   return (
     <div className='picture-list-carousel'>
