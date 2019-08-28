@@ -25,3 +25,6 @@ body {
 .app-body-product .images-container {
   display: flex;
 }
+.app-body-product {
+  position: relative;
+}
