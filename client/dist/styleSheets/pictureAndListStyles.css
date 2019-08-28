@@ -13,6 +13,7 @@
   -webkit-transform: rotate(0);
   -moz-transform: rotate(0);
   transform: rotate(0);
+  display: inline-block;
 }
 .picture img:hover {
   border: 0.5px solid #5c5c5f;
@@ -27,6 +28,7 @@
 .main-picture .caption {
   font-style: italic;
   color: #5c5c5f;
+  padding-left: 6px;
 }
 .arrow {
   height: 30px;

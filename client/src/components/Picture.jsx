@@ -1,9 +1,9 @@
 import React from 'react';
 
-let Picture = ({ picture }) => {
+let Picture = ({ picture, changeMainPicture }) => {
   return (
     <div className='picture'>
-      <img src={`${picture}`}></img>
+      <img src={`${picture}`} onClick={changeMainPicture}></img>
     </div>
   )
 }

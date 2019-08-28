@@ -23,8 +23,8 @@ class App extends React.Component {
       mainPicture: ''
     }
     this.getPictureData = this.getPictureData.bind(this);
+    this.changeMainPicture = this.changeMainPicture.bind(this);
   }
-
   getPictureData(id) {
     //initially set picture Array and mainPicture to be hardcoded
     //will eventually use actual links from s3 to seed database
@@ -40,7 +40,11 @@ class App extends React.Component {
         console.log('Data receive failed', err)
       })
   }
-
+  changeMainPicture(e){
+    this.setState({
+      mainPicture: e.target.src
+    })
+  }
   componentDidMount() {
     this.getPictureData(1);
   }
@@ -63,7 +67,7 @@ class App extends React.Component {
         </div>
         <div className='app-body-product'>
           <div className='images-container'>
-            <PictureList pictureArray={this.state.pictureArray}/>
+            <PictureList pictureArray={this.state.pictureArray} changeMainPicture={this.changeMainPicture}/>
             <MainPictureDisplay mainPicture={this.state.mainPicture}/>
           </div>
           <div className='product-info'>

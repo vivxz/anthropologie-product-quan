@@ -3,12 +3,12 @@ import Picture from './Picture.jsx';
 import { IoIosArrowUp } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
 
-let PictureList = ({ pictureArray }) => {
+let PictureList = ({ pictureArray, changeMainPicture }) => {
   let topArrow = <div></div>;
   let bottomArrow = <div></div>;
   if (pictureArray.length > 5) {
-    topArrow = <IoIosArrowUp className='arrow' color='lightgray' font-size='0.5em'/>;
-    bottomArrow = <IoIosArrowDown className='arrow' color='lightgray' font-size='0.5em'/>;
+    topArrow = <IoIosArrowUp className='arrow' color='lightgray'/>;
+    bottomArrow = <IoIosArrowDown className='arrow' color='lightgray'/>;
   }
   return (
     <div className='picture-list-carousel'>
@@ -18,7 +18,7 @@ let PictureList = ({ pictureArray }) => {
         </div>
         {pictureArray.map((picture, index) => {
           return (
-            <Picture picture={picture} key={index} />
+            <Picture picture={picture} key={index} changeMainPicture={changeMainPicture}/>
           )
         })}
         <div className='arrow-container'>
