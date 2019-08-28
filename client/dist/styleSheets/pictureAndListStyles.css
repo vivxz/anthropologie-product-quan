@@ -1,22 +1,14 @@
-.picture-list {
-  padding-left: 1.5%;
-  padding-right: 3%;
+.picture-list-carousel {
+  width: 130px;
 }
-.picture {
-  margin: 2.5px 2.5px;
+.picture .container {
+  margin-left: auto;
+  margin-right: auto;
 }
-.picture img {
+.picture .container img {
   max-width: 100px;
-  max-height: 120px;
-  padding: 2.5px 2.5px;
-  /* position: fixed; */
-  -webkit-transform: rotate(0);
-  -moz-transform: rotate(0);
-  transform: rotate(0);
-  display: inline-block;
-}
-.picture img:hover {
-  border: 0.5px solid #5c5c5f;
+  margin-left: auto;
+  margin-right: auto;
 }
 .main-picture img {
   max-height: 800px;
@@ -30,14 +22,30 @@
   color: #5c5c5f;
   padding-left: 6px;
 }
-.arrow {
-  height: 30px;
-  width: 90px;
+.picture-list-carousel .container,
+.picture-list-carousel .container .arrow-container {
+  justify-content: center;
+  display: grid;
 }
-.arrow:hover {
+.picture-list-carousel .container .arrow-container .arrow {
+  height: 60px;
+  width: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.picture-list-carousel .container .arrow-container .arrow:hover {
   cursor: pointer;
 }
-.arrow-container {
-  padding-right: 2.5px; 
-  /* margin-right: 2.5px; */
+.picture .container {
+  padding: 3px;
+}
+.picture .container img {
+  position: static;
+  margin: 2.5px 2.5px;
+}
+.picture .container:hover {
+  -webkit-box-shadow: 0px 0px 0px 1px #5c5c5f;
+  -moz-box-shadow: 0px 0px 0px 1px #5c5c5f;
+  box-shadow: 0px 0px 0px 1px #5c5c5f;
+  cursor: pointer;
 }

@@ -19,10 +19,13 @@ class ProductColorSection extends React.Component {
     this.setState({
       clickedFit: e.target.className
     })
+    //might need to reset the size change here
   }
   clickSizeChange(e){
     if (event.target.className.split(' ')[0] !== 'unavailable'){
-      if (this.state.clickedSize.length !== 0){
+      if (this.state.clickedSize.length !== 0 && document.getElementById('size-clicked') === undefined){
+        
+      } else if (this.state.clickedSize.length !== 0){
         document.getElementById('size-clicked').removeAttribute('id');
       }
       document.getElementsByClassName(`${e.target.className}`)[0].setAttribute('id', 'size-clicked');

@@ -15,6 +15,17 @@
 .product-title .payment {
   font-size: 16px;
 }
+.product-title .payment {
+  display: flex;
+}
+.product-title .payment .info-circle {
+  margin: 0px 0px;
+  padding-left: 7px;
+  padding-bottom: 8px;
+}
+.product-title .payment .info-circle .icon:hover {
+  color: #167a92;
+}
 .product-title .payment,
 .product-title .brand-name {
   margin-bottom: 10px;
