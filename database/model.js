@@ -9,7 +9,6 @@ let productDetailSchema = new mongoose.Schema({
   brandName: String,
   onlineExclusive: Boolean,
   reviewStarCount: String,
-  reviewStarImages: [String],
   reviewCount: Number,
   colors: [String],
   colorImages: [String],

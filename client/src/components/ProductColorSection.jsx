@@ -8,7 +8,6 @@ class ProductColorSection extends React.Component {
     this.state = {
       clickedFit: 'standard-fit',
       clickedSize: ''
-      // unavailableSize: ''
     }
     this.clickFitChange = this.clickFitChange.bind(this);
     this.clickSizeChange = this.clickSizeChange.bind(this);
@@ -16,16 +15,17 @@ class ProductColorSection extends React.Component {
   clickFitChange(e) {
     document.getElementById('fit-clicked').removeAttribute('id'); 
     document.getElementsByClassName(`${e.target.className}`)[0].setAttribute('id', 'fit-clicked');
+    if (this.state.clickedSize.length !== 0){
+      document.getElementById('size-clicked').removeAttribute('id');
+    }
     this.setState({
-      clickedFit: e.target.className
+      clickedFit: e.target.className,
+      clickedSize: ''
     })
-    //might need to reset the size change here
   }
   clickSizeChange(e){
     if (event.target.className.split(' ')[0] !== 'unavailable'){
-      if (this.state.clickedSize.length !== 0 && document.getElementById('size-clicked') === undefined){
-        
-      } else if (this.state.clickedSize.length !== 0){
+      if (this.state.clickedSize.length !== 0){
         document.getElementById('size-clicked').removeAttribute('id');
       }
       document.getElementsByClassName(`${e.target.className}`)[0].setAttribute('id', 'size-clicked');

@@ -1,9 +1,10 @@
 import React from 'react';
-import { IoIosInformationCircleOutline } from "react-icons/io";
+import { IoIosInformationCircleOutline } from 'react-icons/io';
+import StarRatings from 'react-star-ratings';
 
 var ProductTitleSection = ({ pictureData, afterPay }) => {
   let { brandName, onlineExclusive, price, productName,
-    reviewCount, reviewStarCount, reviewStarImages } = pictureData;
+    reviewCount, reviewStarCount } = pictureData;
   let roundedPrice = (price / 4).toFixed(2);
 
   let exclusive = onlineExclusive ? 'Online Exclusive' : 'Else';
@@ -23,7 +24,11 @@ var ProductTitleSection = ({ pictureData, afterPay }) => {
         <div className='brand-name'>{brandName}</div>
         <div className='exclusive'>{exclusive}</div>
         <div className='star-reviews'>
-          <div className='star-image'>{reviewStarImages[0]}</div>
+          <div className='star-image'>
+            <StarRatings rating={Number(reviewStarCount)} starRatedColor='#fcc603' numberOfStars={5}
+            starDimension={'20px'} starSpacing={'-1px'}
+            />
+          </div>
           <div className='star-count'>{reviewStarCount}</div>
           <div className='review-count'>{reviewCount} Reviews</div>
         </div>

@@ -9,16 +9,15 @@
   font-weight: 500;
 }
 /*Product Title Section */
-.product-title div {
-  margin: 5px 0px 5px;
-}
 .product-title .name {
   font-size: 22px;
   letter-spacing: 0.11rem;
   font-weight: 500;
+  padding-bottom: 5px;
 }
 .product-title .price {
   font-size: 16px;
+  padding-bottom: 5px;
 }
 .product-title .payment {
   display: flex;
@@ -72,7 +71,9 @@
 }
 .product-title .star-count {
   margin-left: 5px;
+  margin-top: 3px;
 }
 .product-title .review-count {
   margin-left: 10px;
+  margin-top: 3px;
 }

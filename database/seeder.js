@@ -14,7 +14,6 @@ const {
   pantsSize,
   pantsSizePetite,
   pantsSizePlus,
-  reviewStarImages,
   colors,
   colorImages,
   fit,
@@ -51,7 +50,6 @@ const createDresses = () => {
     document.brandName = generateRandomValue(designers);
     document.onlineExclusive = generateRandomValue([true, false]);
     document.reviewStarCount = getRandomArbitraryStarCount(0, 5);
-    document.reviewStarImages = reviewStarImages;
     document.reviewCount = generateRandomNumber(5, 40);
     document.colors = colors;
     document.colorImages = colorImages;
@@ -77,7 +75,6 @@ const createPants = () => {
     document.brandName = generateRandomValue(designers);
     document.onlineExclusive = generateRandomValue([true, false]);
     document.reviewStarCount = getRandomArbitraryStarCount(0, 5);
-    document.reviewStarImages = reviewStarImages;
     document.colors = colors;
     document.colorImages = colorImages;
     document.fit = fit;
@@ -102,7 +99,6 @@ const createSkirts = () => {
     document.brandName = generateRandomValue(designers);
     document.onlineExclusive = generateRandomValue([true, false]);
     document.reviewStarCount = getRandomArbitraryStarCount(0, 5);
-    document.reviewStarImages = reviewStarImages;
     document.colors = colors;
     document.colorImages = colorImages;
     document.fit = fit;
@@ -127,7 +123,6 @@ const createBedding = () => {
     document.brandName = generateRandomValue(designers);
     document.onlineExclusive = generateRandomValue([true, false]);
     document.reviewStarCount = getRandomArbitraryStarCount(0, 5);
-    document.reviewStarImages = reviewStarImages;
     document.colors = colors;
     document.colorImages = colorImages;
     document.fit = fit;

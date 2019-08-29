@@ -24,8 +24,8 @@
 }
 .picture-list-carousel .container,
 .picture-list-carousel .container .arrow-container {
-  justify-content: center;
   display: grid;
+  justify-content: center;
 }
 .picture-list-carousel .container .arrow-container .arrow {
   height: 60px;
