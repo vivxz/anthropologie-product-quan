@@ -7,7 +7,7 @@ var ProductTitleSection = ({ pictureData, afterPay }) => {
     reviewCount, reviewStarCount } = pictureData;
   let roundedPrice = (price / 4).toFixed(2);
 
-  let exclusive = onlineExclusive ? 'Online Exclusive' : 'Else';
+  let exclusive = onlineExclusive ? 'Online Exclusive' : 'Enjoy FREE RETURNS for Plus Styles!';
 
   if (pictureData) {
     return (
@@ -26,7 +26,7 @@ var ProductTitleSection = ({ pictureData, afterPay }) => {
         <div className='star-reviews'>
           <div className='star-image'>
             <StarRatings rating={Number(reviewStarCount)} starRatedColor='#fcc603' numberOfStars={5}
-            starDimension={'20px'} starSpacing={'-1px'}
+            starDimension={'15px'} starSpacing={'-1px'}
             />
           </div>
           <div className='star-count'>{reviewStarCount}</div>

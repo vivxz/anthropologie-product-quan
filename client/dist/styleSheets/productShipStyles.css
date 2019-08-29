@@ -9,6 +9,7 @@
 .product-ship .pick-up .caption {
   padding-left: 10px;
   margin: 3px 0;
+  padding: 8px 0;
 }
 .product-ship .ship-item {
   padding-bottom: 5px;
@@ -23,10 +24,13 @@
 .product-ship .pick-up .select-size {
   padding-left: 28px;
   color: #5c5c5f;
+  padding: 5px 0;
+  padding-left: 19px;
+  padding-bottom: 10px;
 }
 .product-ship .add .basket-button {
   width: 500px;
-  padding: 14px 10px 13px;
+  padding: 10px 10px 13px;
   margin-bottom: 20px;
   border: 1px solid #4b5666;
   text-align: center;
@@ -36,6 +40,12 @@
 }
 .product-ship .add .container {
   color: #167a92;
+  display: flex;
+}
+.product-ship .add .container .registry,
+.product-ship .add .container .empty,
+.product-ship .add .container .wishlist {
+  flex: 1;
 }
 .product-ship .add .container .registry:hover,
 .product-ship .add .container .wishlist:hover {

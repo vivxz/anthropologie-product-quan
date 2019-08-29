@@ -22,6 +22,7 @@ var ProductShipSection = () => {
         <div className='basket-button'>ADD TO BASKET</div>
         <div className='container'>
           <div className='registry'>Add to Registry</div>
+          <div className='empty'></div>
           <div className='wishlist'>Add to Wish List</div>
         </div>
       </div>

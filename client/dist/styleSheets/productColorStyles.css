@@ -17,11 +17,14 @@
 .product-color .size-container .size,
 .product-color .quantity-container .quantity,
 .product-color .fit-container .fit {
-  padding-bottom: 5px;
+  padding-bottom: 9px;
 }
 #fit-clicked {
   border-color: #167a92;
   color: #167a92; 
   outline-style: auto;
   outline-offset: -1px; 
+}
+.product-color .size-container .subclass {
+  padding: 5px 0;
 }
