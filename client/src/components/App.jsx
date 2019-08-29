@@ -21,10 +21,14 @@ class App extends React.Component {
     this.state = {
       pictureData: '',
       pictureArray: [],
-      mainPicture: ''
+      currentFivePictureArray: [],
+      mainPicture: '',
+      topArrowDarken: true,
+      initialArrowCounter: 0
     }
     this.getPictureData = this.getPictureData.bind(this);
     this.changeMainPicture = this.changeMainPicture.bind(this);
+    this.changeFivePictures = this.changeFivePictures.bind(this);
   }
   getPictureData(id) {
     //initially set picture Array and mainPicture to be hardcoded
@@ -34,6 +38,7 @@ class App extends React.Component {
         this.setState({
           pictureData: data,
           pictureArray,
+          currentFivePictureArray: pictureArray.slice(0, 5),
           mainPicture: pictureArray[0]
         }, () => console.log('Data received', this.state.pictureData))
       })
@@ -45,6 +50,21 @@ class App extends React.Component {
     this.setState({
       mainPicture: e.target.src
     })
+  }
+  changeFivePictures(e){
+    if (e.target.id === 'top'){
+      this.setState({
+        currentFivePictureArray: this.state.pictureArray.slice(0,5),
+        topArrowDarken: false,
+        initialArrowCounter: this.state.initialArrowCounter+1
+      }, () => console.log('state when top is clicked', this.state.topArrowDarken, this.state.initialArrowCounter))
+    } else if (e.target.id === 'bottom'){
+      this.setState({
+        currentFivePictureArray: this.state.pictureArray.slice(-5),
+        topArrowDarken: true,
+        initialArrowCounter: this.state.initialArrowCounter+1
+      }, () => console.log('state when bottom is clicked', this.state.topArrowDarken, this.state.initialArrowCounter))
+    }
   }
   componentDidMount() {
     this.getPictureData(1);
@@ -68,7 +88,9 @@ class App extends React.Component {
         </div>
         <div className='app-body-product'>
           <div className='images-container'>
-            <PictureList pictureArray={this.state.pictureArray} changeMainPicture={this.changeMainPicture}/>
+            <PictureList pictureArray={this.state.pictureArray} changeMainPicture={this.changeMainPicture} 
+            currentFivePictureArray={this.state.currentFivePictureArray} changeFivePictures={this.changeFivePictures}
+            topArrowDarken={this.state.topArrowDarken} initialArrowCounter={this.state.initialArrowCounter}/>
             <MainPictureDisplay mainPicture={this.state.mainPicture}/>
           </div>
           <div className='product-info'>

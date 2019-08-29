@@ -10,6 +10,11 @@
   padding-left: 10px;
   margin: 3px 0;
   padding: 8px 0;
+  margin-left: 15px;
+}
+.product-ship .ship-item input,
+.product-ship .pick-up .container input {
+  margin-top: 10px;
 }
 .product-ship .ship-item {
   padding-bottom: 5px;
@@ -25,7 +30,7 @@
   padding-left: 28px;
   color: #5c5c5f;
   padding: 5px 0;
-  padding-left: 19px;
+  padding-left: 32px;
   padding-bottom: 10px;
 }
 .product-ship .add .basket-button {
