@@ -6,8 +6,13 @@ import { FiChevronDown } from "react-icons/fi";
 class PictureList extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      pictureNotClicked: true,
+      currentPictureClicked: ''
+    }
     this.addSlideUp = this.addSlideUp.bind(this);
     this.addSlideDown = this.addSlideDown.bind(this);
+    this.checkIfPictureClickedInPictureList = this.checkIfPictureClickedInPictureList.bind(this);
   }
   addSlideUp(){
     document.getElementsByClassName('picture-list-container')[0].setAttribute(
@@ -18,6 +23,23 @@ class PictureList extends React.Component {
     document.getElementsByClassName('picture-list-container')[0].setAttribute(
       'id', 'addSlideDown'
     )   
+  }
+  checkIfPictureClickedInPictureList(event){
+    let string = 'container ';
+    let containerClassSearch = string.concat(event.target.className.split(' ')[1]);
+    if (this.state.pictureNotClicked){
+      document.getElementsByClassName(`${containerClassSearch}`)[0].setAttribute('id', 'picture-clicked');
+      this.setState({
+        pictureNotClicked: false,
+        currentPictureClicked: event.target.className
+      })
+    } else {
+      document.getElementById('picture-clicked').removeAttribute('id');
+      document.getElementsByClassName(`${containerClassSearch}`)[0].setAttribute('id', 'picture-clicked');
+      this.setState({
+        currentPictureClicked: event.target.className
+      })
+    }
   }
   render() {
     let { changeFivePictures, changeMainPicture, currentFivePictureArray, initialArrowCounter, pictureArray, topArrowDarken } = this.props;
@@ -47,7 +69,7 @@ class PictureList extends React.Component {
           <div className='picture-list-container'>
             {currentFivePictureArray.map((picture, index) => {
               return (
-                <Picture picture={picture} key={index} changeMainPicture={changeMainPicture} />
+                <Picture picture={picture} key={index} id={index} changeMainPicture={changeMainPicture} checkIfPictureClickedInPictureList={this.checkIfPictureClickedInPictureList}/>
               )
             })}
           </div>
