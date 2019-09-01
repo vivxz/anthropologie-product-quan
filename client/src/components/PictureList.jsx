@@ -1,11 +1,23 @@
 import React from 'react';
 import Picture from './Picture.jsx';
-import { IoIosArrowUp } from "react-icons/io";
-import { IoIosArrowDown } from "react-icons/io";
+import { FiChevronUp } from "react-icons/fi";
+import { FiChevronDown } from "react-icons/fi";
 
 class PictureList extends React.Component {
   constructor(props) {
     super(props);
+    this.addSlideUp = this.addSlideUp.bind(this);
+    this.addSlideDown = this.addSlideDown.bind(this);
+  }
+  addSlideUp(){
+    document.getElementsByClassName('picture-list-container')[0].setAttribute(
+      'id', 'addSlideUp'
+    )
+  }
+  addSlideDown(){
+    document.getElementsByClassName('picture-list-container')[0].setAttribute(
+      'id', 'addSlideDown'
+    )   
   }
   render() {
     let { changeFivePictures, changeMainPicture, currentFivePictureArray, initialArrowCounter, pictureArray, topArrowDarken } = this.props;
@@ -13,15 +25,15 @@ class PictureList extends React.Component {
     let bottomArrow = <div className='arrow'></div>;
     if (pictureArray.length > 5) {
       if (initialArrowCounter === 0) {
-        topArrow = <IoIosArrowUp className='arrow' id='top' color='#f4efef'/>;
-        bottomArrow = <IoIosArrowDown className='arrow' id='bottom' color='#808080' onClick={changeFivePictures}/>;
+        topArrow = <FiChevronUp className='arrow' id='top' color='#f4efef' />;
+        bottomArrow = <FiChevronDown className='arrow' id='bottom' color='#808080' onClick={changeFivePictures} />;
       } else {
         if (topArrowDarken) {
-          topArrow = <IoIosArrowUp className='arrow' id='top' color='#808080' onClick={changeFivePictures}/>;
-          bottomArrow = <IoIosArrowDown className='arrow' id='bottom' color='#f4efef'/>;
+          topArrow = <FiChevronUp className='arrow' id='top' color='#808080' onClick={changeFivePictures} />;
+          bottomArrow = <FiChevronDown className='arrow' id='bottom' color='#f4efef' />;
         } else {
-          topArrow = <IoIosArrowUp className='arrow' id='top' color='#f4efef' />;
-          bottomArrow = <IoIosArrowDown className='arrow' id='bottom' color='#808080' onClick={changeFivePictures}/>;
+          topArrow = <FiChevronUp className='arrow' id='top' color='#f4efef' />;
+          bottomArrow = <FiChevronDown className='arrow' id='bottom' color='#808080' onClick={changeFivePictures} />;
         }
       }
     }
@@ -32,11 +44,13 @@ class PictureList extends React.Component {
           <div className='arrow-container'>
             {topArrow}
           </div>
-          {currentFivePictureArray.map((picture, index) => {
-            return (
-              <Picture picture={picture} key={index} changeMainPicture={changeMainPicture} />
-            )
-          })}
+          <div className='picture-list-container'>
+            {currentFivePictureArray.map((picture, index) => {
+              return (
+                <Picture picture={picture} key={index} changeMainPicture={changeMainPicture} />
+              )
+            })}
+          </div>
           <div className='arrow-container'>
             {bottomArrow}
           </div>

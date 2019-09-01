@@ -1,5 +1,5 @@
 .picture-list-carousel {
-  width: 130px;
+  width: 120px;
 }
 .picture .container {
   margin-left: auto;
@@ -36,16 +36,22 @@
 .picture-list-carousel .container .arrow-container .arrow:hover {
   cursor: pointer;
 }
+#addSlideUp {
+ transform : translateY(-25px);
+}
+#addSlideDown {
+  transform : translateY(-25px);
+}
 .picture .container {
   padding: 3px;
 }
 .picture .container img {
   position: static;
-  margin: 2.5px 2.5px;
+  margin: 2.0px 2.0px;
 }
 .picture .container:hover {
-  -webkit-box-shadow: 0px 0px 0px 1px #5c5c5f;
-  -moz-box-shadow: 0px 0px 0px 1px #5c5c5f;
-  box-shadow: 0px 0px 0px 1px #5c5c5f;
+  -webkit-box-shadow: 0px 0px 0px 0.5px #5c5c5f;
+  -moz-box-shadow: 0px 0px 0px 0.5px #5c5c5f;
+  box-shadow: 0px 0px 0px 0.5px #5c5c5f;
   cursor: pointer;
 }

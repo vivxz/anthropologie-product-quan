@@ -26,6 +26,13 @@ body {
 .app-body-product .images-container {
   display: flex;
 }
-.app-body-product {
-  position: relative;
+#gray-out {
+  background: rgba(87,102,116,.4);
+  opacity: .4;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }

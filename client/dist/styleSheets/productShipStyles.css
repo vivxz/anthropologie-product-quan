@@ -43,6 +43,10 @@
   color: #fff;
   cursor: pointer;
 }
+.product-ship .add .basket-button:hover {
+  background: #fff;
+  color: #4b5666;
+}
 .product-ship .add .container {
   color: #167a92;
   display: flex;
