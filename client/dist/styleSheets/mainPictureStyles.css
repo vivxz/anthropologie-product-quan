@@ -1,10 +1,21 @@
+.main-picture {
+  position: relative;
+}
 .main-picture img {
   max-height: 800px;
   margin: 0 7.5px;
 }
 .main-picture img:hover {
   cursor: crosshair;
+  opacity: 0.5;
+
 }
+/* .main-picture .slide-main-img {
+  left: 100px;
+  height: 800px;
+  transform: translateX(800px);
+  transition: 1s;
+} */
 .main-picture .caption {
   font-style: italic;
   color: #5c5c5f;

@@ -14,21 +14,25 @@
 .picture-list-carousel .container .arrow-container {
   display: grid;
   justify-content: center;
+  z-index: 10;
 }
 .picture-list-carousel .container .arrow-container .arrow {
   height: 60px;
   width: 50px;
   margin-left: auto;
   margin-right: auto;
+
 }
 .picture-list-carousel .container .arrow-container .arrow:hover {
   cursor: pointer;
 }
 /* #addSlideUp {
  transform : translateY(-25px);
+ transition: transform 100ms linear;
 }
 #addSlideDown {
-  transform : translateY(-25px);
+  transform : translateY(25px) 1s;
+  transition: transform 100ms linear;
 } */
 .picture .container {
   padding: 3px;

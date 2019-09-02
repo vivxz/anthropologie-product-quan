@@ -11,6 +11,7 @@ body {
   display: flex;
   padding-bottom: 2%;
   justify-content: center;
+  z-index: 10;
 }
 .app-body .product-header .start {
   padding-left: 1%;

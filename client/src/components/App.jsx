@@ -23,10 +23,11 @@ class App extends React.Component {
       pictureData: '',
       pictureArray: [],
       currentFivePictureArray: [],
-      mainPicture: '',
+      mainPictureIndex: 0,
       topArrowDarken: true,
       initialArrowCounter: 0,
-      afterPayClicked: false
+      afterPayClicked: false,
+      intialRenderOfMainPic: true
     }
     this.getPictureData = this.getPictureData.bind(this);
     this.changeMainPicture = this.changeMainPicture.bind(this);
@@ -52,8 +53,9 @@ class App extends React.Component {
   }
   changeMainPicture(e) {
     this.setState({
-      mainPicture: e.target.src
-    })
+      mainPictureIndex: this.state.pictureArray.indexOf(e.target.src),
+      intialRenderOfMainPic: false
+    }, ()=> console.log('grabbed index', this.state.mainPictureIndex))
   }
   changeFivePictures(e) {
     if (e.target.id === 'top') {
@@ -120,7 +122,7 @@ class App extends React.Component {
               <PictureList pictureArray={this.state.pictureArray} changeMainPicture={this.changeMainPicture}
                 currentFivePictureArray={this.state.currentFivePictureArray} changeFivePictures={this.changeFivePictures}
                 topArrowDarken={this.state.topArrowDarken} initialArrowCounter={this.state.initialArrowCounter} />
-              <MainPictureDisplay mainPicture={this.state.mainPicture} />
+              <MainPictureDisplay mainPictureIndex={this.state.mainPictureIndex} intialRenderOfMainPic={this.state.intialRenderOfMainPic} pictureArray={this.state.pictureArray}/>
             </div>
             <div className='product-info'>
               <ProductInfo pictureData={this.state.pictureData} afterPay={afterPay} handleAfterPayInfoClick={this.handleAfterPayInfoClick}/>
