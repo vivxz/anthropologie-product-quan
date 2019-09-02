@@ -1,0 +1,12 @@
+.main-picture img {
+  max-height: 800px;
+  margin: 0 7.5px;
+}
+.main-picture img:hover {
+  cursor: crosshair;
+}
+.main-picture .caption {
+  font-style: italic;
+  color: #5c5c5f;
+  padding-left: 6px;
+}

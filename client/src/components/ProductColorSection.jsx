@@ -13,9 +13,9 @@ class ProductColorSection extends React.Component {
     this.clickSizeChange = this.clickSizeChange.bind(this);
   }
   clickFitChange(e) {
-    document.getElementById('fit-clicked').removeAttribute('id'); 
+    document.getElementById('fit-clicked').removeAttribute('id');
     document.getElementsByClassName(`${e.target.className}`)[0].setAttribute('id', 'fit-clicked');
-    if (this.state.clickedSize.length !== 0){
+    if (this.state.clickedSize.length !== 0) {
       document.getElementById('size-clicked').removeAttribute('id');
     }
     this.setState({
@@ -23,9 +23,9 @@ class ProductColorSection extends React.Component {
       clickedSize: ''
     })
   }
-  clickSizeChange(e){
-    if (event.target.className.split(' ')[0] !== 'unavailable'){
-      if (this.state.clickedSize.length !== 0){
+  clickSizeChange(e) {
+    if (event.target.className.split(' ')[0] !== 'unavailable') {
+      if (this.state.clickedSize.length !== 0) {
         document.getElementById('size-clicked').removeAttribute('id');
       }
       document.getElementsByClassName(`${e.target.className}`)[0].setAttribute('id', 'size-clicked');
@@ -50,7 +50,7 @@ class ProductColorSection extends React.Component {
       sizes = sizePlus;
       sizesOutofStock = sizePlusUnavailable;
     }
-    
+
     if (this.props.pictureData) {
       return (
         <div className='product-color'>
@@ -75,7 +75,7 @@ class ProductColorSection extends React.Component {
           </div>
           <div className='size-container'>
             <div className='size'>SIZE: </div>
-            <SizeList sizes={sizes} sizesUnavailable={sizesOutofStock} clickSizeChange={this.clickSizeChange}/>
+            <SizeList sizes={sizes} sizesUnavailable={sizesOutofStock} clickSizeChange={this.clickSizeChange} />
             <div className='subclass'>
               <SizeGuides />
               <div className='divider'>|</div>

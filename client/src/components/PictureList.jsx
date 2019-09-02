@@ -10,24 +10,24 @@ class PictureList extends React.Component {
       pictureNotClicked: true,
       currentPictureClicked: ''
     }
-    this.addSlideUp = this.addSlideUp.bind(this);
-    this.addSlideDown = this.addSlideDown.bind(this);
+    // this.addSlideUp = this.addSlideUp.bind(this);
+    // this.addSlideDown = this.addSlideDown.bind(this);
     this.checkIfPictureClickedInPictureList = this.checkIfPictureClickedInPictureList.bind(this);
   }
-  addSlideUp(){
-    document.getElementsByClassName('picture-list-container')[0].setAttribute(
-      'id', 'addSlideUp'
-    )
-  }
-  addSlideDown(){
-    document.getElementsByClassName('picture-list-container')[0].setAttribute(
-      'id', 'addSlideDown'
-    )   
-  }
-  checkIfPictureClickedInPictureList(event){
+  // addSlideUp(){
+  //   document.getElementsByClassName('picture-list-container')[0].setAttribute(
+  //     'id', 'addSlideUp'
+  //   )
+  // }
+  // addSlideDown(){
+  //   document.getElementsByClassName('picture-list-container')[0].setAttribute(
+  //     'id', 'addSlideDown'
+  //   )   
+  // }
+  checkIfPictureClickedInPictureList(event) {
     let string = 'container ';
     let containerClassSearch = string.concat(event.target.className.split(' ')[1]);
-    if (this.state.pictureNotClicked){
+    if (this.state.pictureNotClicked) {
       document.getElementsByClassName(`${containerClassSearch}`)[0].setAttribute('id', 'picture-clicked');
       this.setState({
         pictureNotClicked: false,
@@ -59,7 +59,6 @@ class PictureList extends React.Component {
         }
       }
     }
-
     return (
       <div className='picture-list-carousel'>
         <div className='container'>
@@ -69,7 +68,7 @@ class PictureList extends React.Component {
           <div className='picture-list-container'>
             {currentFivePictureArray.map((picture, index) => {
               return (
-                <Picture picture={picture} key={index} id={index} changeMainPicture={changeMainPicture} checkIfPictureClickedInPictureList={this.checkIfPictureClickedInPictureList}/>
+                <Picture picture={picture} key={index} id={index} changeMainPicture={changeMainPicture} checkIfPictureClickedInPictureList={this.checkIfPictureClickedInPictureList} />
               )
             })}
           </div>
@@ -81,6 +80,5 @@ class PictureList extends React.Component {
     )
   }
 }
-
 
 export default PictureList;

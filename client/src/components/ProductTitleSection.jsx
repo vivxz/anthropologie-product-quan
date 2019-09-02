@@ -6,9 +6,8 @@ let ProductTitleSection = ({ pictureData, afterPay, handleAfterPayInfoClick }) =
   let { brandName, onlineExclusive, price, productName,
     reviewCount, reviewStarCount } = pictureData;
   let roundedPrice = (price / 4).toFixed(2);
-
   let exclusive = onlineExclusive ? 'Online Exclusive' : 'Enjoy FREE RETURNS for Plus Styles!';
-
+  
   if (pictureData) {
     return (
       <div>

@@ -10,18 +10,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-.main-picture img {
-  max-height: 800px;
-  margin: 0 7.5px;
-}
-.main-picture img:hover {
-  cursor: crosshair;
-}
-.main-picture .caption {
-  font-style: italic;
-  color: #5c5c5f;
-  padding-left: 6px;
-}
 .picture-list-carousel .container,
 .picture-list-carousel .container .arrow-container {
   display: grid;
@@ -36,12 +24,12 @@
 .picture-list-carousel .container .arrow-container .arrow:hover {
   cursor: pointer;
 }
-#addSlideUp {
+/* #addSlideUp {
  transform : translateY(-25px);
 }
 #addSlideDown {
   transform : translateY(-25px);
-}
+} */
 .picture .container {
   padding: 3px;
 }
