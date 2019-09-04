@@ -10,36 +10,52 @@
   margin-right: auto;
 }
 .picture .container img {
-  max-width: 85px;
+  max-height: 132px;
   margin-left: auto;
   margin-right: auto;
 }
 .picture-list-carousel .container,
-.picture-list-carousel .container .arrow-container {
+.picture-list-carousel .container .arrow-container,
+.picture-list-carousel .arrow-container {
   display: grid;
   justify-content: center;
-  z-index: 10;
+  z-index: 2000;
 }
-.picture-list-carousel .container .arrow-container .arrow {
+.picture-list-carousel .container .arrow-container .arrow,
+.picture-list-carousel .arrow-container .arrow {
   height: 60px;
   width: 50px;
   margin-left: auto;
   margin-right: auto;
-
+  z-index: 2000;
 }
-.picture-list-carousel .container .arrow-container .arrow:hover {
+.picture-list-carousel .container .arrow-container .arrow:hover,
+.picture-list-carousel .arrow-container .arrow {
   cursor: pointer;
 }
-/* #addSlideUp {
- transform : translateY(-25px);
- transition: transform 100ms linear;
-}
-#addSlideDown {
-  transform : translateY(25px) 1s;
-  transition: transform 100ms linear;
-} */
 .picture .container {
   padding: 3px;
+}
+.picture-list-carousel .arrow-container .arrow {
+  background: green;
+  position: relative;
+  z-index: 4000;
+}
+#top-arrow {
+  padding-top: 21px;
+  padding-bottom: 15px;
+}
+#bottom-arrow {
+  position: relative;
+  top: -298px;
+  background-color: white;
+  padding-bottom: 400px;
+}
+#white-box {
+  height: 30px;
+  background-color: white;
+  position: relative;
+  top: -280px;
 }
 .picture .container img {
   position: static;

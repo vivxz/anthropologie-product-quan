@@ -10,28 +10,8 @@ class PictureList extends React.Component {
       pictureNotClicked: true,
       currentPictureClicked: ''
     }
-    // this.addSlideUp = this.addSlideUp.bind(this);
-    // this.addSlideDown = this.addSlideDown.bind(this);
     this.checkIfPictureClickedInPictureList = this.checkIfPictureClickedInPictureList.bind(this);
   }
-  // addSlideUp(){
-  //   if (document.getElementById('addSlideUp')){
-  //     document.getElementById('addsSlideUp').removeAttribute('id');
-  //   }
-  //   // document.getElementsByClassName('picture-list-container')[0].setAttribute(
-  //   //   'id', 'addSlideUp'
-  //   )
-  //   // console.log('inside up', document.getElementById('addSlideUp'))
-  // }
-  // addSlideDown(){
-  //   if (document.getElementById('addSlideDown')){
-  //     document.getElementById('addsSlideDown').removeAttribute('id');
-  //   }
-  //   document.getElementsByClassName('picture-list-container')[0].setAttribute(
-  //     'id', 'addSlideDown'
-  //   )   
-  //   console.log('inside down', document.getElementById('addSlideDown'))
-  // }
   checkIfPictureClickedInPictureList(event) {
     let string = 'container ';
     let containerClassSearch = string.concat(event.target.className.split(' ')[1]);
@@ -50,7 +30,9 @@ class PictureList extends React.Component {
     }
   }
   render() {
-    let { changeFivePictures, changeMainPicture, currentFivePictureArray, initialArrowCounter, pictureArray, topArrowDarken } = this.props;
+    let { 
+      // changeFivePictures, 
+      changeMainPicture, currentFivePictureArray, initialArrowCounter, pictureArray, topArrowDarken } = this.props;
     let topArrow = <div className='arrow'></div>;
     let bottomArrow = <div className='arrow'></div>;
     if (pictureArray.length > 5) {
@@ -58,20 +40,20 @@ class PictureList extends React.Component {
         topArrow = <FiChevronUp className='arrow' id='top' color='#f4efef' />;
         bottomArrow = <FiChevronDown className='arrow' id='bottom' color='#808080' 
         // onClick={(e) => {changeFivePictures(e); this.addSlideDown();}} 
-        onClick={changeFivePictures}
+        // onClick={changeFivePictures}
         />;
       } else {
         if (topArrowDarken) {
           topArrow = <FiChevronUp className='arrow' id='top' color='#808080' 
           // onClick={(e) => {changeFivePictures(e); this.addSlideUp();}} 
-          onClick={changeFivePictures}
+          // onClick={changeFivePictures}
           />;
           bottomArrow = <FiChevronDown className='arrow' id='bottom' color='#f4efef' />;
         } else {
           topArrow = <FiChevronUp className='arrow' id='top' color='#f4efef' />;
           bottomArrow = <FiChevronDown className='arrow' id='bottom' color='#808080' 
           // onClick={(e) => {changeFivePictures(e); this.addSlideDown();}} 
-          onClick={changeFivePictures}
+          // onClick={changeFivePictures}
           />;
         }
       }
@@ -79,17 +61,18 @@ class PictureList extends React.Component {
     return (
       <div className='picture-list-carousel'>
         <div className='container'>
-          <div className='arrow-container'>
+          <div className='arrow-container' id='top-arrow'>
             {topArrow}
           </div>
           <div className='picture-list-container'>
-            {currentFivePictureArray.map((picture, index) => {
+            {pictureArray.map((picture, index) => {
               return (
                 <Picture picture={picture} key={index} id={index} changeMainPicture={changeMainPicture} checkIfPictureClickedInPictureList={this.checkIfPictureClickedInPictureList} />
               )
             })}
           </div>
-          <div className='arrow-container'>
+          <div id='white-box'></div>
+          <div className='arrow-container' id='bottom-arrow'>
             {bottomArrow}
           </div>
         </div>

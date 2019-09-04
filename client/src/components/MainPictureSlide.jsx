@@ -4,7 +4,6 @@ let MainPictureSlide = ({ image }) => {
   const styles = {
     backgroundImage: `url("${image}")`,
     backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
   }  
 
   return (
