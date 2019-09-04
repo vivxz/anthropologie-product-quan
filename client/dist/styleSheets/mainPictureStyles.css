@@ -1,33 +1,16 @@
-/* .main-picture {
-  position: relative;
-} */
 .main-picture-container {
-  /* position: relative; */
   display: flex;
-  /* overflow: hidden;
-  width: 600px;
-  height: 600px; */
 }
-/* .main-picture-container img { */
 .image-slide {
-  /* max-height: 000px; */
   display: inline-block;
   max-height: 900px;
   width: 600px;
   height: auto;
-  /* z-index: 10000; */
 }
-/* .main-picture-container img:hover { */
 .image-slide:hover {
   cursor: crosshair;
   opacity: 0.5;
 }
-/* .main-picture .slide-main-img {
-  left: 100px;
-  height: 800px;
-  transform: translateX(800px);
-  transition: 1s;
-} */
 .main-picture-container .caption {
   font-style: italic;
   color: #5c5c5f;
