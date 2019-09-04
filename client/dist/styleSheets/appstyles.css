@@ -27,6 +27,12 @@ body {
 .app-body-product .images-container {
   display: flex;
 }
+.app-body-product .images-container {
+  width: 700px;
+  height: 1000px;
+  overflow: hidden;
+  position: relative;
+}
 #gray-out {
   background: rgba(87,102,116,.4);
   opacity: .4;

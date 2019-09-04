@@ -1,5 +1,7 @@
 .picture-list-carousel {
   width: 120px;
+  padding-left: 5px;
+  padding-right: 15px;
 }
 .picture .container {
   margin-left: auto;

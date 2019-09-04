@@ -5,14 +5,14 @@ import ProductInfo from './ProductInfo.jsx';
 import Axios from 'axios';
 import AfterPayModal from './AfterPayModal.jsx';
 const pictureArray = [
-  'https://s7d5.scene7.com/is/image/Anthropologie/4130206000057_038_b?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain',
-  'https://s7d5.scene7.com/is/image/Anthropologie/4130206000057_038_b2?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain',
-  'https://s7d5.scene7.com/is/image/Anthropologie/4130206000057_038_b3?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain',
-  'https://s7d5.scene7.com/is/image/Anthropologie/4130206000057_038_b4?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain',
+  'https://s7d5.scene7.com/is/image/Anthropologie/4130206000057_038_b?$a15-pdp-detail-shot$&hei=900&qlt=80',
+  'https://s7d5.scene7.com/is/image/Anthropologie/4130206000057_038_b2?$a15-pdp-detail-shot$&hei=900&qlt=80',
+  'https://s7d5.scene7.com/is/image/Anthropologie/4130206000057_038_b3?$a15-pdp-detail-shot$&hei=900&qlt=80',
+  'https://s7d5.scene7.com/is/image/Anthropologie/4130206000057_038_b4?$a15-pdp-detail-shot$&hei=900&qlt=80',
 
-  'https://s7d5.scene7.com/is/image/Anthropologie/4130638280064_089_b4?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain',
-  'https://s7d5.scene7.com/is/image/Anthropologie/4130638280064_089_b5?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain',
-  'https://s7d5.scene7.com/is/image/Anthropologie/4130638280064_089_b3?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain'
+  'https://s7d5.scene7.com/is/image/Anthropologie/4130638280064_089_b4?$a15-pdp-detail-shot$&hei=900&qlt=80',
+  'https://s7d5.scene7.com/is/image/Anthropologie/4130638280064_089_b5?$a15-pdp-detail-shot$&hei=900&qlt=80',
+  'https://s7d5.scene7.com/is/image/Anthropologie/4130638280064_089_b3?$a15-pdp-detail-shot$&hei=900&qlt=80'
 ];
 const afterPay = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSYF5YkDEGMF8EYXrKBfL0aJOt6guePtglaHrDKQNnXkXPslvX';
 
@@ -24,6 +24,7 @@ class App extends React.Component {
       pictureArray: [],
       currentFivePictureArray: [],
       mainPictureIndex: 0,
+      transformPictureValue: 0,
       topArrowDarken: true,
       initialArrowCounter: 0,
       afterPayClicked: false,
@@ -34,6 +35,7 @@ class App extends React.Component {
     this.changeFivePictures = this.changeFivePictures.bind(this);
     this.handleAfterPayInfoClick = this.handleAfterPayInfoClick.bind(this);
     this.handleAfterPayXClick = this.handleAfterPayXClick.bind(this);
+    this.calculateTransformPictureValue = this.calculateTransformPictureValue.bind(this);
   }
   getPictureData(id) {
     //initially set picture Array and mainPicture to be hardcoded
@@ -52,10 +54,23 @@ class App extends React.Component {
       })
   }
   changeMainPicture(e) {
+    let previousMainPictureIndex = this.state.mainPictureIndex;
+    let currentMainPictureIndex = this.state.pictureArray.indexOf(e.target.src);
+    //get width of current img
+    console.log('document querySelect', document.querySelector('.image-slide'))
+    let imageWidth = document.querySelector('.image-slide').clientWidth;
+    let newTransformValue = this.calculateTransformPictureValue(previousMainPictureIndex, currentMainPictureIndex, imageWidth);
+
     this.setState({
-      mainPictureIndex: this.state.pictureArray.indexOf(e.target.src),
-      intialRenderOfMainPic: false
-    }, ()=> console.log('grabbed index', this.state.mainPictureIndex))
+      mainPictureIndex: currentMainPictureIndex,
+      intialRenderOfMainPic: false,
+      transformPictureValue: this.state.transformPictureValue - newTransformValue
+    }, ()=> console.log('grabbed index', this.state.transformPictureValue))
+  }
+  calculateTransformPictureValue(previous, current, width){
+    //will grab index of current  and previous index
+    let differenceIndex = current - previous;
+    return width * differenceIndex;
   }
   changeFivePictures(e) {
     if (e.target.id === 'top') {
@@ -122,7 +137,8 @@ class App extends React.Component {
               <PictureList pictureArray={this.state.pictureArray} changeMainPicture={this.changeMainPicture}
                 currentFivePictureArray={this.state.currentFivePictureArray} changeFivePictures={this.changeFivePictures}
                 topArrowDarken={this.state.topArrowDarken} initialArrowCounter={this.state.initialArrowCounter} />
-              <MainPictureDisplay mainPictureIndex={this.state.mainPictureIndex} intialRenderOfMainPic={this.state.intialRenderOfMainPic} pictureArray={this.state.pictureArray}/>
+              <MainPictureDisplay intialRenderOfMainPic={this.state.intialRenderOfMainPic} mainPictureIndex={this.state.mainPictureIndex}
+              pictureArray={this.state.pictureArray} transformPictureValue={this.state.transformPictureValue}/>
             </div>
             <div className='product-info'>
               <ProductInfo pictureData={this.state.pictureData} afterPay={afterPay} handleAfterPayInfoClick={this.handleAfterPayInfoClick}/>

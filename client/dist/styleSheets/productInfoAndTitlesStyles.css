@@ -1,6 +1,9 @@
 .product-info {
   padding-left: 20px;
-  font-size: 13px;
+  font-size: 13px;  
+  /* position: absolute; */
+  /* z-index: 1000; */
+  /* background-color: white; */
 }
 .color,
 .fit,
