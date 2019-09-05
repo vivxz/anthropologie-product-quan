@@ -56,9 +56,13 @@ class ProductColorSection extends React.Component {
         <div className='product-color'>
           <div className='color-container'>
             <div className='color'>COLOR: </div>
-            <div className='type'>{colors[0]}</div>
+            <div className='type'>{colors[8]}</div>
           </div>
-          <div className='color-image'>C IMG</div>
+          <div className='color-image-container'>
+            <div className='color-image-border'>
+              <img src={`${this.props.colorLink}`} className='color-image'></img>
+            </div>
+          </div>
           <div className='fit-container'>
             <div className='fit'>FIT: </div>
             <div className='subclass'>

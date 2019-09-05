@@ -5,16 +5,17 @@ import ProductInfo from './ProductInfo.jsx';
 import Axios from 'axios';
 import AfterPayModal from './AfterPayModal.jsx';
 const pictureArray = [
-  'https://s7d5.scene7.com/is/image/Anthropologie/4130206000057_038_b?$a15-pdp-detail-shot$&hei=900&qlt=80',
-  'https://s7d5.scene7.com/is/image/Anthropologie/4130206000057_038_b2?$a15-pdp-detail-shot$&hei=900&qlt=80',
-  'https://s7d5.scene7.com/is/image/Anthropologie/4130206000057_038_b3?$a15-pdp-detail-shot$&hei=900&qlt=80',
-  'https://s7d5.scene7.com/is/image/Anthropologie/4130206000057_038_b4?$a15-pdp-detail-shot$&hei=900&qlt=80',
+  'https://s7d5.scene7.com/is/image/Anthropologie/4130638280076_061_b?$a15-pdp-detail-shot$&hei=900&qlt=80',
+  'https://s7d5.scene7.com/is/image/Anthropologie/4130638280076_061_b2?$a15-pdp-detail-shot$&hei=900&qlt=80',
+  'https://s7d5.scene7.com/is/image/Anthropologie/4130638280076_061_b3?$a15-pdp-detail-shot$&hei=900&qlt=80',
+  'https://s7d5.scene7.com/is/image/Anthropologie/4130638280076_061_b4?$a15-pdp-detail-shot$&hei=900&qlt=80',
 
-  'https://s7d5.scene7.com/is/image/Anthropologie/4130638280064_089_b4?$a15-pdp-detail-shot$&hei=900&qlt=80',
-  'https://s7d5.scene7.com/is/image/Anthropologie/4130638280064_089_b5?$a15-pdp-detail-shot$&hei=900&qlt=80',
-  'https://s7d5.scene7.com/is/image/Anthropologie/4130638280064_089_b3?$a15-pdp-detail-shot$&hei=900&qlt=80'
+  'https://s7d5.scene7.com/is/image/Anthropologie/4130638280076_061_c?$a15-pdp-detail-shot$&hei=900&qlt=80',
+  'https://s7d5.scene7.com/is/image/Anthropologie/4130638280076_061_c3?$a15-pdp-detail-shot$&hei=900&qlt=80',
+  'https://s7d5.scene7.com/is/image/Anthropologie/4130638280076_061_c4?$a15-pdp-detail-shot$&hei=900&qlt=80'
 ];
 const afterPay = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSYF5YkDEGMF8EYXrKBfL0aJOt6guePtglaHrDKQNnXkXPslvX';
+const colorLink = 'https://images.fabric.com/images/693/693/0403744.jpg';
 
 class App extends React.Component {
   constructor(props) {
@@ -155,7 +156,8 @@ class App extends React.Component {
               pictureArray={this.state.pictureArray} transformPictureValue={this.state.transformPictureValue}/>
             </div>
             <div className='product-info'>
-              <ProductInfo pictureData={this.state.pictureData} afterPay={afterPay} handleAfterPayInfoClick={this.handleAfterPayInfoClick}/>
+              <ProductInfo pictureData={this.state.pictureData} afterPay={afterPay} handleAfterPayInfoClick={this.handleAfterPayInfoClick}
+                colorLink={colorLink}/>
             </div>
           </div>
         </div>

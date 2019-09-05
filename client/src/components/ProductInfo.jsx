@@ -3,11 +3,11 @@ import ProductTitleSection from './ProductTitleSection.jsx';
 import ProductColorSection from './ProductColorSection.jsx';
 import ProductShipSection from './ProductShipSection.jsx';
 
-let ProductInfo = ({ pictureData, afterPay, handleAfterPayInfoClick }) => {
+let ProductInfo = ({ afterPay, colorLink, handleAfterPayInfoClick, pictureData }) => {
   return (
     <div className='product-info'>
-      <ProductTitleSection pictureData={pictureData} afterPay={afterPay} handleAfterPayInfoClick={handleAfterPayInfoClick}/>
-      <ProductColorSection pictureData={pictureData} />
+      <ProductTitleSection afterPay={afterPay} pictureData={pictureData} handleAfterPayInfoClick={handleAfterPayInfoClick}/>
+      <ProductColorSection colorLink={colorLink} pictureData={pictureData}/>
       <hr className='non-dotted' ></hr>
       <ProductShipSection />
     </div>
