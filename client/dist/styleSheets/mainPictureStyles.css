@@ -1,0 +1,23 @@
+.main-picture-container {
+  display: flex;
+}
+.image-slide {
+  display: inline-block;
+  max-height: 900px;
+  width: 600px;
+  height: auto;
+}
+.image-slide:hover {
+  cursor: crosshair;
+  opacity: 0.5;
+}
+.main-picture-container .caption {
+  font-style: italic;
+  color: #5c5c5f;
+  padding-left: 6px;
+}
+.zoom-box {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}

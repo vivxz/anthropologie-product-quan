@@ -1,0 +1,47 @@
+body {
+  font-weight: 300; 
+  font-family: "Avenir LT W02 45 Book",sans-serif;
+  letter-spacing: .06rem;
+  font-size: 12px;
+  background-color: #fdfdf9;
+}
+.app-body {
+  padding: 3.5% 2.5% 10% 3.5%;
+}
+.app-body .product-header {
+  display: flex;
+  padding-bottom: 2%;
+  justify-content: center;
+  z-index: 2;
+}
+.app-body .product-header .start {
+  padding-left: 1%;
+}
+.app-body .product-header .backslash {
+  padding: 0% 1.5%;
+}
+.app-body .product-header .product-category:hover {
+  cursor: pointer;
+  color: #167a92;
+}
+.app-body-product,
+.app-body-product .images-container {
+  display: flex;
+}
+.app-body-product .images-container {
+  width: 700px;
+  height: 900px;
+  overflow: hidden;
+  position: relative;
+}
+#gray-out {
+  background: rgba(87,102,116,.4);
+  opacity: .4;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
