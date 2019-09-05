@@ -12,12 +12,14 @@ class MainPictureDisplay extends React.Component {
   }
   handleMouseHover(event){
     this.setState({
-      xCoordinate: event.clientX,
-      yCoordinate: event.clientY
+      // xCoordinate: event.clientX,
+      // yCoordinate: event.clientY
       // xCoordinate: event.screenX,
       // yCoordinate: event.screenY
-      // xCoordinate: event.nativeEvent.offsetX,
-      // yCoordinate: event.nativeEvent.offsetY
+      // xCoordinate: event.offsetX,
+      // yCoordinate: event.offsetY
+      xCoordinate: event.nativeEvent.offsetX,
+      yCoordinate: event.nativeEvent.offsetY
     }, () => console.log('what is handle mouse hover', this.state.xCoordinate, this.state.yCoordinate))
   }
   handleMouseChange(hovering){
