@@ -1,7 +1,7 @@
 import React from 'react';
 import MainPictureSlide from './MainPictureSlide.jsx';
 
-let MainPictureDisplay = ({ intialRenderOfMainPic, mainPictureIndex, pictureArray, transformPictureValue }) => {
+let MainPictureDisplay = ({ pictureArray, transformPictureValue }) => {
   if (pictureArray.length > 0) {
     return (
         <div className='main-picture-container'

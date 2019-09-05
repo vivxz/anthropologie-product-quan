@@ -22,9 +22,9 @@ class App extends React.Component {
     this.state = {
       pictureData: '',
       pictureArray: [],
-      currentFivePictureArray: [],
       mainPictureIndex: 0,
       transformPictureValue: 0,
+      transformPictureListValue: 0,
       topArrowDarken: true,
       initialArrowCounter: 0,
       afterPayClicked: false,
@@ -65,7 +65,7 @@ class App extends React.Component {
       mainPictureIndex: currentMainPictureIndex,
       intialRenderOfMainPic: false,
       transformPictureValue: this.state.transformPictureValue - newTransformValue
-    }, ()=> console.log('grabbed index', this.state.transformPictureValue))
+    })
   }
   calculateTransformPictureValue(previous, current, width){
     //will grab index of current  and previous index
@@ -73,18 +73,22 @@ class App extends React.Component {
     return width * differenceIndex;
   }
   changeFivePictures(e) {
+    let height = document.querySelector('.picture').clientHeight;
+    let moveLength;
     if (e.target.id === 'top') {
       this.setState({
-        currentFivePictureArray: this.state.pictureArray.slice(0, 5),
+        transformPictureListValue: 0,
         topArrowDarken: false,
         initialArrowCounter: this.state.initialArrowCounter + 1
-      }, () => console.log('state when top is clicked', this.state.topArrowDarken, this.state.initialArrowCounter))
+      }, () => console.log('state when top is clicked', this.state.topArrowDarken, this.state.transformPictureListValue))
     } else if (e.target.id === 'bottom') {
+      let lengthOver = this.state.pictureArray.length - 5;
+      moveLength = lengthOver * height;
       this.setState({
-        currentFivePictureArray: this.state.pictureArray.slice(-5),
+        transformPictureListValue: this.state.transformPictureListValue - moveLength,
         topArrowDarken: true,
         initialArrowCounter: this.state.initialArrowCounter + 1
-      }, () => console.log('state when bottom is clicked', this.state.topArrowDarken, this.state.initialArrowCounter))
+      }, () => console.log('state when bottom is clicked', this.state.topArrowDarken, this.state.transformPictureListValue))
     }
   }
   handleAfterPayInfoClick() {
@@ -136,7 +140,8 @@ class App extends React.Component {
             <div className='images-container'>
               <PictureList pictureArray={this.state.pictureArray} changeMainPicture={this.changeMainPicture}
                 currentFivePictureArray={this.state.currentFivePictureArray} changeFivePictures={this.changeFivePictures}
-                topArrowDarken={this.state.topArrowDarken} initialArrowCounter={this.state.initialArrowCounter} />
+                topArrowDarken={this.state.topArrowDarken} initialArrowCounter={this.state.initialArrowCounter} 
+                transformPictureListValue={this.state.transformPictureListValue}/>
               <MainPictureDisplay intialRenderOfMainPic={this.state.intialRenderOfMainPic} mainPictureIndex={this.state.mainPictureIndex}
               pictureArray={this.state.pictureArray} transformPictureValue={this.state.transformPictureValue}/>
             </div>

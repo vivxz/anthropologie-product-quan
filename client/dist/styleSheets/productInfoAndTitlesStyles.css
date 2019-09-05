@@ -1,9 +1,6 @@
 .product-info {
   padding-left: 20px;
   font-size: 13px;  
-  /* position: absolute; */
-  /* z-index: 1000; */
-  /* background-color: white; */
 }
 .color,
 .fit,
@@ -33,7 +30,6 @@
 }
 .product-title .payment .after-pay {
   max-height: 24px;
-  /* margin-top: 5px; */
   margin-top: -3px;
 }
 .product-title .payment .after-pay:hover{
