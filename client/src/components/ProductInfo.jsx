@@ -1,9 +1,15 @@
 import React from 'react';
+import ProductTitleSection from './ProductTitleSection.jsx';
+import ProductColorSection from './ProductColorSection.jsx';
+import ProductShipSection from './ProductShipSection.jsx';
 
-let ProductInfo = () => {
+let ProductInfo = ({ afterPay, colorLink, handleAfterPayInfoClick, pictureData }) => {
   return (
-    <div>
-      ProductInfo Component
+    <div className='product-info'>
+      <ProductTitleSection afterPay={afterPay} pictureData={pictureData} handleAfterPayInfoClick={handleAfterPayInfoClick}/>
+      <ProductColorSection colorLink={colorLink} pictureData={pictureData}/>
+      <hr className='non-dotted' ></hr>
+      <ProductShipSection />
     </div>
   )
 }

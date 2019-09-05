@@ -15,3 +15,5 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 app.use('/api', router);
 
 app.listen(port, () => console.log(`App listening on port ${port}!`))
+
+module.exports = app;

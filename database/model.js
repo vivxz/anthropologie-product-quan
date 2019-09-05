@@ -9,13 +9,16 @@ let productDetailSchema = new mongoose.Schema({
   brandName: String,
   onlineExclusive: Boolean,
   reviewStarCount: String,
-  reviewStarImages: [String],
   reviewCount: Number,
   colors: [String],
   colorImages: [String],
   fit: [String],
-  sizes: [String],
+  sizeStandard: [String],
+  sizePetite: [String],
+  sizePlus: [String],
   sizesUnavailable: String,
+  sizePetiteUnavailable: String,
+  sizePlusUnavailable: String,
   image: [String]
 })
 

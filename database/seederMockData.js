@@ -26,6 +26,13 @@ const skirtSubcategory = [
 const dressSkirtSize = [
   'XXS', 'XS', 'S', 'M', 'L', 'XL'
 ]
+const dressSkirtSizePetite = [
+  'XXS Petite', 'XS Petite', 'S Petite', 
+  'M Petite', 'L Petite', 'XL Petite'
+]
+const dressSkirtSizePlus = [
+  '1x', '2x', '3x'
+]
 const pantsSubcategory = [
   'Pants', 'Trousers', 'Joggers', 'Jeans', 'Jumpsuit', 
   'Overalls', 'Leggings'
@@ -35,6 +42,13 @@ const pantsAdjectives = [
 ]
 const pantsSize = [
   '00', '0', '2', '4', '6', '8', '10', '12', '14', '16'
+]
+const pantsSizePetite = [
+  '00 P', '0 P', '2 P', '4 P', '6 P', 
+  '8 P', '10 P', '12 P', '14 P', '16 P'
+]
+const pantsSizePlus = [
+  '16 W', '18 W', '20 W', '22 W', '24 W', '26 W'
 ]
 const reviewStarImages = [
   '5 Star Image', '4.5 Star Image', '4 Star Image', '3.5 Star Image',
@@ -76,9 +90,13 @@ module.exports = {
   dressAdjectives,
   skirtSubcategory,
   dressSkirtSize,
+  dressSkirtSizePetite,
+  dressSkirtSizePlus,
   pantsSubcategory,
   pantsAdjectives,
   pantsSize,
+  pantsSizePetite,
+  pantsSizePlus,
   reviewStarImages,
   colors,
   colorImages,

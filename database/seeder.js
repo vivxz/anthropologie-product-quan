@@ -7,10 +7,13 @@ const {
   dressAdjectives,
   skirtSubcategory,
   dressSkirtSize,
+  dressSkirtSizePetite,
+  dressSkirtSizePlus,
   pantsSubcategory,
   pantsAdjectives,
   pantsSize,
-  reviewStarImages,
+  pantsSizePetite,
+  pantsSizePlus,
   colors,
   colorImages,
   fit,
@@ -46,14 +49,17 @@ const createDresses = () => {
     document.price = generateRandomNumber(100, 399);
     document.brandName = generateRandomValue(designers);
     document.onlineExclusive = generateRandomValue([true, false]);
-    document.reviewStarCount = getRandomArbitraryStarCount(0, 5);
-    document.reviewStarImages = reviewStarImages;
+    document.reviewStarCount = getRandomArbitraryStarCount(1, 5);
     document.reviewCount = generateRandomNumber(5, 40);
     document.colors = colors;
     document.colorImages = colorImages;
     document.fit = fit;
-    document.sizes = dressSkirtSize;
+    document.sizeStandard = dressSkirtSize;
+    document.sizePetite = dressSkirtSizePetite;
+    document.sizePlus = dressSkirtSizePlus;
     document.sizesUnavailable = generateRandomValue(dressSkirtSize);
+    document.sizePetiteUnavailable = generateRandomValue(dressSkirtSizePetite);
+    document.sizePlusUnavailable = generateRandomValue(dressSkirtSizePlus);
     document.image = fileNames;
     storage.push(document);
     document = {};
@@ -68,13 +74,16 @@ const createPants = () => {
     document.price = generateRandomNumber(100, 399);
     document.brandName = generateRandomValue(designers);
     document.onlineExclusive = generateRandomValue([true, false]);
-    document.reviewStarCount = getRandomArbitraryStarCount(0, 5);
-    document.reviewStarImages = reviewStarImages;
+    document.reviewStarCount = getRandomArbitraryStarCount(1, 5);
     document.colors = colors;
     document.colorImages = colorImages;
     document.fit = fit;
-    document.sizes = pantsSize;
+    document.sizeStandard = pantsSize;
+    document.sizePetite = pantsSizePetite;
+    document.sizePlus = pantsSizePlus;
     document.sizesUnavailable = generateRandomValue(pantsSize);
+    document.sizePetiteUnavailable = generateRandomValue(pantsSizePetite);
+    document.sizePlusUnavailable = generateRandomValue(pantsSizePlus);
     document.image = fileNames;
     storage.push(document);
     document = {};
@@ -89,13 +98,16 @@ const createSkirts = () => {
     document.price = generateRandomNumber(100, 399);
     document.brandName = generateRandomValue(designers);
     document.onlineExclusive = generateRandomValue([true, false]);
-    document.reviewStarCount = getRandomArbitraryStarCount(0, 5);
-    document.reviewStarImages = reviewStarImages;
+    document.reviewStarCount = getRandomArbitraryStarCount(1, 5);
     document.colors = colors;
     document.colorImages = colorImages;
     document.fit = fit;
-    document.sizes = dressSkirtSize;
+    document.sizeStandard = dressSkirtSize;
+    document.sizePetite = dressSkirtSizePetite;
+    document.sizePlus = dressSkirtSizePlus;
     document.sizesUnavailable = generateRandomValue(dressSkirtSize);
+    document.sizePetiteUnavailable = generateRandomValue(dressSkirtSizePetite);
+    document.sizePlusUnavailable = generateRandomValue(dressSkirtSizePlus);
     document.image = '';
     storage.push(document);
     document = {};
@@ -110,13 +122,16 @@ const createBedding = () => {
     document.price = generateRandomNumber(100, 399);
     document.brandName = generateRandomValue(designers);
     document.onlineExclusive = generateRandomValue([true, false]);
-    document.reviewStarCount = getRandomArbitraryStarCount(0, 5);
-    document.reviewStarImages = reviewStarImages;
+    document.reviewStarCount = getRandomArbitraryStarCount(1, 5);
     document.colors = colors;
     document.colorImages = colorImages;
     document.fit = fit;
-    document.sizes = beddingSize;
+    document.sizeStandard = beddingSize;
+    document.sizePetite = [''];
+    document.sizePlus = [''];
     document.sizesUnavailable = generateRandomValue(beddingSize);
+    document.sizePetiteUnavailable = '';
+    document.sizePlusUnavailable = '';
     document.image = fileNames;
     storage.push(document);
     document = {};
