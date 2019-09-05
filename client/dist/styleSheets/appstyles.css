@@ -3,6 +3,7 @@ body {
   font-family: "Avenir LT W02 45 Book",sans-serif;
   letter-spacing: .06rem;
   font-size: 12px;
+  background-color: #fdfdf9;
 }
 .app-body {
   padding: 3.5% 2.5% 10% 3.5%;
@@ -43,3 +44,4 @@ body {
   left: 0;
   right: 0;
 }
+

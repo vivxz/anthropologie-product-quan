@@ -49,7 +49,7 @@ const createDresses = () => {
     document.price = generateRandomNumber(100, 399);
     document.brandName = generateRandomValue(designers);
     document.onlineExclusive = generateRandomValue([true, false]);
-    document.reviewStarCount = getRandomArbitraryStarCount(0, 5);
+    document.reviewStarCount = getRandomArbitraryStarCount(1, 5);
     document.reviewCount = generateRandomNumber(5, 40);
     document.colors = colors;
     document.colorImages = colorImages;
@@ -74,7 +74,7 @@ const createPants = () => {
     document.price = generateRandomNumber(100, 399);
     document.brandName = generateRandomValue(designers);
     document.onlineExclusive = generateRandomValue([true, false]);
-    document.reviewStarCount = getRandomArbitraryStarCount(0, 5);
+    document.reviewStarCount = getRandomArbitraryStarCount(1, 5);
     document.colors = colors;
     document.colorImages = colorImages;
     document.fit = fit;
@@ -98,7 +98,7 @@ const createSkirts = () => {
     document.price = generateRandomNumber(100, 399);
     document.brandName = generateRandomValue(designers);
     document.onlineExclusive = generateRandomValue([true, false]);
-    document.reviewStarCount = getRandomArbitraryStarCount(0, 5);
+    document.reviewStarCount = getRandomArbitraryStarCount(1, 5);
     document.colors = colors;
     document.colorImages = colorImages;
     document.fit = fit;
@@ -122,7 +122,7 @@ const createBedding = () => {
     document.price = generateRandomNumber(100, 399);
     document.brandName = generateRandomValue(designers);
     document.onlineExclusive = generateRandomValue([true, false]);
-    document.reviewStarCount = getRandomArbitraryStarCount(0, 5);
+    document.reviewStarCount = getRandomArbitraryStarCount(1, 5);
     document.colors = colors;
     document.colorImages = colorImages;
     document.fit = fit;

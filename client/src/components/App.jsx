@@ -93,10 +93,16 @@ class App extends React.Component {
   }
   handleAfterPayInfoClick() {
     if (!this.state.afterPayClicked) {
-      document.getElementsByClassName('app-body')[0]
+      document.getElementsByClassName('app-body')[0];
       document.getElementsByClassName('app-body')[0].setAttribute('id', 'gray-out');
-      document.getElementsByClassName('app-component-body')[0]
+      document.getElementsByClassName('app-component-body')[0];
       document.getElementsByClassName('app-component-body')[0].setAttribute('id', 'no-move');
+      document.getElementsByClassName('picture-list-carousel')[0];
+      document.getElementsByClassName('picture-list-carousel')[0].setAttribute('id', 'gray-out-picture-list');
+      document.getElementsByClassName('top')[0];
+      document.getElementById('top-arrow').removeAttribute('id')
+      document.getElementsByClassName('arrow-container-top')[0].setAttribute('id', 'new-top-arrow');
+      
       this.setState({
         afterPayClicked: true
       }, () => console.log('afterpay clicked', this.state.afterPayClicked))
@@ -106,6 +112,9 @@ class App extends React.Component {
     if (this.state.afterPayClicked) {
       document.getElementsByClassName('app-body')[0].removeAttribute('id');
       document.getElementsByClassName('app-component-body')[0].removeAttribute('id');
+      document.getElementsByClassName('picture-list-carousel')[0].removeAttribute('id');
+      document.getElementById('new-top-arrow').removeAttribute('id')
+      document.getElementsByClassName('arrow-container-top')[0].setAttribute('id', 'top-arrow');
 
       this.setState({
         afterPayClicked: false

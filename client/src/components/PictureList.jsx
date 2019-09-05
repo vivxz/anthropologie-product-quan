@@ -58,7 +58,7 @@ class PictureList extends React.Component {
     return (
       <div className='picture-list-carousel'>
         <div className='container'>
-          <div className='arrow-container' id='top-arrow'>
+          <div className='arrow-container-top' id='top-arrow'>
             {topArrow}
           </div>
           <div className='picture-list-container'
@@ -75,7 +75,7 @@ class PictureList extends React.Component {
             })}
           </div>
           <div id='white-box'></div>
-          <div className='arrow-container' id='bottom-arrow'>
+          <div className='arrow-container-bottom' id='bottom-arrow'>
             {bottomArrow}
           </div>
         </div>

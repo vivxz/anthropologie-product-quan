@@ -2,7 +2,7 @@
   width: 120px;
   padding-left: 5px;
   padding-right: 15px;
-  background-color: white;
+  background-color: #fdfdf9;
   z-index: 1;
 }
 .picture .container {
@@ -15,34 +15,34 @@
   margin-right: auto;
 }
 .picture-list-carousel .container,
-.picture-list-carousel .container .arrow-container,
-.picture-list-carousel .arrow-container {
+.picture-list-carousel .container .arrow-container-top,
+.picture-list-carousel .arrow-container-bottom {
   display: grid;
   justify-content: center;
   z-index: 2;
 }
-.picture-list-carousel .container .arrow-container .arrow,
-.picture-list-carousel .arrow-container .arrow {
+.picture-list-carousel .container .arrow-container-top .arrow,
+.picture-list-carousel .arrow-container-bottom .arrow {
   height: 60px;
   width: 50px;
   margin-left: auto;
   margin-right: auto;
   z-index: 2;
 }
-.picture-list-carousel .container .arrow-container .arrow:hover,
-.picture-list-carousel .arrow-container .arrow {
+.picture-list-carousel .container .arrow-container-top .arrow:hover,
+.picture-list-carousel .arrow-container-bottom .arrow {
   cursor: pointer;
 }
 .picture .container {
   padding: 3px;
 }
-.picture-list-carousel .arrow-container .arrow {
+.picture-list-carousel .arrow-container-bottom .arrow {
   position: relative;
   z-index: 4;
 }
 #top-arrow {
   position: relative;
-  background: white;
+  background-color: #fdfdf9;
   top: -1px;
   padding-top: 21px;
   padding-bottom: 15px;
@@ -50,12 +50,12 @@
 #bottom-arrow {
   position: relative;
   top: -298px;
-  background-color: white;
+  background-color: #fdfdf9;
   padding-bottom: 400px;
 }
 #white-box {
   height: 30px;
-  background-color: white;
+  background-color:#fdfdf9;
   position: relative;
   top: -280px;
 }
@@ -73,4 +73,17 @@
   -webkit-box-shadow: 0px 0px 0px 0.5px #26262c;
   -moz-box-shadow: 0px 0px 0px 0.5px #26262c;
   box-shadow: 0px 0px 0px 0.5px #26262c; 
+}
+#gray-out-picture-list, 
+#gray-out-top,
+#gray-out-bottom {
+  background: rgba(204, 208, 211, 0.4);
+  opacity: .4;
+}
+#new-top-arrow {
+  position: relative;
+  background: rgba(204, 208, 211, 0.4);
+  top: -1px;
+  padding-top: 21px;
+  padding-bottom: 15px; 
 }

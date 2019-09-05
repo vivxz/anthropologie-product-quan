@@ -2,7 +2,7 @@
   position: absolute;
   overflow-y: auto;
   top: 10%;
-  left: 20%;
+  left: 22%;
   width: 70%;
   max-width: 790px;
   min-height: initial;
@@ -10,8 +10,8 @@
   max-height: 85%;
   margin: auto 0;
   padding: 40px 30px;
-  z-index: 7;
-  background: #fdfdf9;
+  z-index: 25;
+  background-color: #fdfdf9;
   box-shadow: 0 0 3px 1.75px rgba(0,0,0,.1);
 }
 .after-pay-modal .icon {
@@ -92,14 +92,14 @@
   margin-bottom: 20px;
   border: 1px solid #4b5666;
   text-align: center;
-  background: #fff;
+  background-color: #fdfdf9;
   color: #4b5666;
   cursor: pointer;
   margin-bottom: 20px;
 }
 .after-pay-modal .button-container .learn-more:hover {
   background: #4b5666;
-  color: #fff;  
+  background-color: #fdfdf9;
 }
 .after-pay-modal .non-dotted {
   padding-bottom: 20px;
