@@ -120,7 +120,7 @@ class App extends React.Component {
   }
   handleAfterPayXClick() {
     if (this.state.afterPayClicked) {
-      document.getElementsByTagName('body')[0].removeAttribute('id');
+      document.getElementsByTagName('div')[0].removeAttribute('id');
       // document.getElementsByTagName('body')[0].removeAttribute('id');
       document.getElementsByClassName('picture-list-carousel')[0].removeAttribute('id');
       document.getElementById('new-top-arrow').removeAttribute('id')
@@ -169,6 +169,7 @@ class App extends React.Component {
                 colorLink={colorLink}/>
             </div>
           </div>
+          <div className='images-caption'>Hover your mouse over an image to zoom.</div>
         </div>
       </div>
     )

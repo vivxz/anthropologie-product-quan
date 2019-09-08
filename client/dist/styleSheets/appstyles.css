@@ -30,11 +30,19 @@ body {
   display: flex;
 }
 .app-body-product .images-container {
-  width: 640px;
-  height: 900px;
+  width: 630px;
+  height: 850px;
   overflow: hidden;
   position: relative;
 }
+.app-body .images-caption {
+  width: 265px;
+  margin-left: 120px;
+  margin-top: 5px;
+  font-style: italic;
+  letter-spacing: .06rem;
+}
+
 #gray-out {
   /* display: none; */
   position: fixed;

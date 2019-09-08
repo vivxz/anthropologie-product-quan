@@ -38,7 +38,7 @@ class MainPictureDisplay extends React.Component {
     let { pictureArray, transformPictureValue } = this.props;
     if (pictureArray.length > 0) {
       return (
-        <div className='main-picture-container'
+          <div className='main-picture-container'
           style={
             {
               transform: `translateX(${transformPictureValue}px)`,
@@ -49,7 +49,7 @@ class MainPictureDisplay extends React.Component {
             <MainPictureSlide image={image} key={i} handleMouseHover={this.handleMouseHover}
               xCoordinate={this.state.xCoordinate} yCoordinate={this.state.yCoordinate}/>
           ))}
-        </div>
+          </div>
       )
     } else {
       return (<div></div>)
