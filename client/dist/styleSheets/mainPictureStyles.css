@@ -17,7 +17,8 @@
   padding-left: 6px;
 }
 .zoom-box {
-  width: 100px;
-  height: 100px;
-  background-color: blue;
+  width: 152px;
+  height: 190px;
+  opacity: 1;
+  background-color: green;
 }

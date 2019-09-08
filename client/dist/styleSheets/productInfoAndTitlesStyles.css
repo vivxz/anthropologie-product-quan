@@ -15,8 +15,10 @@
   font-weight: 500;
   padding-top: 5px;
   padding-bottom: 5px;
+  color: #26262c;
 }
 .product-title .price {
+  color: #26262c;
   font-size: 16px;
   padding-bottom: 10px;
 }

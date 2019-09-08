@@ -8,7 +8,7 @@ let MainPictureSlide = ({ handleMouseHover, image, xCoordinate, yCoordinate }) =
   //if isHovering create a new div and set it to miniBox
   let zoomBox;
 
-  if (xCoordinate !== 0 && yCoordinate !== 0){
+  if (xCoordinate !== '' && yCoordinate !== ''){
     zoomBox = <div className='zoom-box'
     style = {
       {
