@@ -15,7 +15,9 @@ let AfterPayModal = ({ afterPay, handleAfterPayXClick }) => {
             <img className='after-pay-modal-image' src={afterPay}></img>
           </div>
         </div>
-        <div className='caption'>Shop Now. Enjoy Now. Pay Later.</div>
+        <div className='caption-container'>
+          <div className='caption'>Shop Now. Enjoy Now. Pay Later.</div>
+        </div>
       </div>
       <hr className='non-dotted' ></hr>
       <div className='three-images-container'>
@@ -49,7 +51,7 @@ let AfterPayModal = ({ afterPay, handleAfterPayXClick }) => {
         </div>
       </div>
       <div className='button-container'>
-        <div className='learn-more-button'>LEARN MORE</div>
+        <div id='learn-more-button'>LEARN MORE</div>
       </div>
       <hr className='non-dotted' ></hr>
       <div className='terms-container'>

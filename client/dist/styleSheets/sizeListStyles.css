@@ -29,6 +29,14 @@
 .product-color .size-container .subclass {
   color: #167a92;
   margin-bottom: 20px;
+  height: 15px;
+}
+/* .size-guides,
+.product-color .size-container .subclass .customers-say {
+  height: 15px;
+} */
+.product-color .size-container {
+  padding-bottom: 12px;
 }
 .size-guides:hover,
 .product-color .size-container .subclass .customers-say:hover {
@@ -55,11 +63,11 @@
   margin-bottom: 0;
   border: 1px solid #939395;
   background-color: #fdfdf9;
-  font-weight: 600;
-  font-size: 15px;
+  font-weight: 500;
+  font-size: 13px;
 }
 .product-color .quantity-container {
-  margin-bottom: 30px;
+  margin-bottom: 32px;
 }
 .non-dotted {
   display: block;

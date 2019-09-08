@@ -5,8 +5,12 @@
 .product-ship .add .container {
   display: flex;
 }
-.product-ship .ship-item .caption,
-.product-ship .pick-up .caption {
+.product-ship input {
+  width: 40px;
+}
+#ship-caption, 
+#pick-up-caption {
+  /* width: 40px; */
   padding-left: 10px;
   margin: 3px 0;
   padding: 8px 0;
@@ -20,6 +24,7 @@
   padding-bottom: 5px;
   color: #26262c;
 }
+/* s */
 .product-ship .pick-up {
   padding-bottom: 20px;
 }

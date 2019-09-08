@@ -30,7 +30,7 @@ body {
   display: flex;
 }
 .app-body-product .images-container {
-  width: 700px;
+  width: 640px;
   height: 900px;
   overflow: hidden;
   position: relative;

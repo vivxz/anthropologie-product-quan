@@ -1,5 +1,5 @@
 .product-info {
-  padding-left: 20px;
+  padding-left: 37px;
   font-size: 13px;  
 }
 .color,
@@ -20,10 +20,11 @@
 .product-title .price {
   color: #26262c;
   font-size: 16px;
+  padding-top: 2.5px;
   padding-bottom: 10px;
 }
 .product-title .payment {
-  margin-top: 5px;
+  margin-top: 10px;
   display: flex;
   margin-bottom: 10px;
 }
@@ -79,11 +80,16 @@
 .product-color .fit-container .subclass {
   display: flex;
 }
+.product-color .fit-container .subclass .subcontainer .standard-fit,
+.product-color .fit-container .subclass .subcontainer .petite-fit,
+.product-color .fit-container .subclass .subcontainer .plus-fit {
+  width: 200px;
+}
 .product-title .star-count {
-  padding-left: 5px;
+  padding-left: 10px;
   margin: 1.5px;
 }
 .product-title .review-count {
-  padding-left: 10px;
+  padding-left: 22px;
   margin: 1.5px;
 }

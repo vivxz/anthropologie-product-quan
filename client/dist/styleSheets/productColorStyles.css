@@ -1,7 +1,7 @@
 .product-color .color-container {
   text-transform: uppercase;
   color: #26262c;
-  padding-bottom: 5px;
+  padding: 5px 0;
 }
 .product-color .color-container .type {
   color: #5c5c5f;
@@ -11,7 +11,7 @@
   padding-bottom: 5px;
 }
 .product-color .color-image-container {
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 .product-color .color-image-container .color-image-border {
   border: 1px solid #5c5c5f;
