@@ -23,7 +23,7 @@
 }
 .picture-list-carousel .container .arrow-container-top .arrow,
 .picture-list-carousel .arrow-container-bottom .arrow {
-  height: 60px;
+  height: 50px;
   width: 50px;
   margin-left: auto;
   margin-right: auto;
@@ -44,14 +44,14 @@
   position: relative;
   background-color: #fdfdf9;
   top: -1px;
-  padding-top: 21px;
+  padding-top: 5px;
   padding-bottom: 15px;
 }
 #bottom-arrow {
   position: relative;
-  top: -298px;
+  top: -300px;
   background-color: #fdfdf9;
-  padding-bottom: 400px;
+  padding-bottom: 100px;
 }
 #white-box {
   height: 30px;

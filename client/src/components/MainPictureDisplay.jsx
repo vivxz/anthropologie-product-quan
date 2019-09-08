@@ -5,22 +5,29 @@ class MainPictureDisplay extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      xCoordinate: 0,
-      yCoordinate: 0
+      xCoordinate: '',
+      yCoordinate: ''
     }
     this.handleMouseHover = this.handleMouseHover.bind(this);
   }
   handleMouseHover(event){
-    this.setState({
-      // xCoordinate: event.clientX,
-      // yCoordinate: event.clientY
-      // xCoordinate: event.screenX,
-      // yCoordinate: event.screenY
-      // xCoordinate: event.offsetX,
-      // yCoordinate: event.offsetY
-      xCoordinate: event.nativeEvent.offsetX,
-      yCoordinate: event.nativeEvent.offsetY
-    }, () => console.log('what is handle mouse hover', this.state.xCoordinate, this.state.yCoordinate))
+    let zoomBoxArea = document.getElementsByClassName('zoom-box')[0];
+    let mainImageSlide = document.getElementsByClassName('image-slide')[0];
+    // console.log('what is zoomboxarea mainimageslide', zoomBoxArea, mainImageSlide)
+    // this.setState({
+    //   mainPictureOffsetHeight: '',
+    //   mainPictureOffsetWidth: '',
+    //   zoomBoxOffsetWidth: '',
+    //   zoomBoxOffsetHeight: ''
+    //   // xCoordinate: event.clientX,
+    //   // yCoordinate: event.clientY
+    //   // xCoordinate: event.screenX,
+    //   // yCoordinate: event.screenY
+    //   // xCoordinate: event.offsetX,
+    //   // yCoordinate: event.offsetY
+    //   // xCoordinate: event.nativeEvent.offsetX,
+    //   // yCoordinate: event.nativeEvent.offsetY
+    // }, () => console.log('X Coordinate, Y Coordinate', this.state.xCoordinate, this.state.yCoordinate))
   }
   handleMouseChange(hovering){
     if (hovering){
@@ -31,7 +38,7 @@ class MainPictureDisplay extends React.Component {
     let { pictureArray, transformPictureValue } = this.props;
     if (pictureArray.length > 0) {
       return (
-        <div className='main-picture-container'
+          <div className='main-picture-container'
           style={
             {
               transform: `translateX(${transformPictureValue}px)`,
@@ -42,7 +49,7 @@ class MainPictureDisplay extends React.Component {
             <MainPictureSlide image={image} key={i} handleMouseHover={this.handleMouseHover}
               xCoordinate={this.state.xCoordinate} yCoordinate={this.state.yCoordinate}/>
           ))}
-        </div>
+          </div>
       )
     } else {
       return (<div></div>)

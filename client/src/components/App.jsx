@@ -16,6 +16,14 @@ const pictureArray = [
 ];
 const afterPay = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSYF5YkDEGMF8EYXrKBfL0aJOt6guePtglaHrDKQNnXkXPslvX';
 const colorLink = 'https://images.fabric.com/images/693/693/0403744.jpg';
+import '../../dist/styleSheets/appstyles.css';
+import '../../dist/styleSheets/mainPictureStyles.css';
+import '../../dist/styleSheets/modalStyles.css';
+import '../../dist/styleSheets/pictureAndListStyles.css';
+import '../../dist/styleSheets/productColorStyles.css';
+import '../../dist/styleSheets/productInfoAndTitlesStyles.css';
+import '../../dist/styleSheets/productShipStyles.css';
+import '../../dist/styleSheets/sizeListStyles.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -48,7 +56,7 @@ class App extends React.Component {
           pictureArray,
           currentFivePictureArray: pictureArray.slice(0, 5),
           mainPicture: pictureArray[0]
-        }, () => console.log('Data received', this.state.pictureData))
+        })
       })
       .catch((err) => {
         console.log('Data receive failed', err)
@@ -81,7 +89,7 @@ class App extends React.Component {
         transformPictureListValue: 0,
         topArrowDarken: false,
         initialArrowCounter: this.state.initialArrowCounter + 1
-      }, () => console.log('state when top is clicked', this.state.topArrowDarken, this.state.transformPictureListValue))
+      })
     } else if (e.target.id === 'bottom') {
       let lengthOver = this.state.pictureArray.length - 5;
       moveLength = lengthOver * height;
@@ -89,15 +97,16 @@ class App extends React.Component {
         transformPictureListValue: this.state.transformPictureListValue - moveLength,
         topArrowDarken: true,
         initialArrowCounter: this.state.initialArrowCounter + 1
-      }, () => console.log('state when bottom is clicked', this.state.topArrowDarken, this.state.transformPictureListValue))
+      })
     }
   }
   handleAfterPayInfoClick() {
     if (!this.state.afterPayClicked) {
-      document.getElementsByClassName('app-body')[0];
-      document.getElementsByClassName('app-body')[0].setAttribute('id', 'gray-out');
-      document.getElementsByClassName('app-component-body')[0];
-      document.getElementsByClassName('app-component-body')[0].setAttribute('id', 'no-move');
+      // document.getElementsByClassName('fec-container')[0];
+      // console.log('document.getElementsByClassName', document.getElementsByClassName('fec-container'))
+      document.getElementsByTagName('div')[0].setAttribute('id', 'gray-out');
+      // document.getElementsByTagName('body')[0];
+      // document.getElementsByTagName('body')[0].setAttribute('id', 'no-move');
       document.getElementsByClassName('picture-list-carousel')[0];
       document.getElementsByClassName('picture-list-carousel')[0].setAttribute('id', 'gray-out-picture-list');
       document.getElementsByClassName('top')[0];
@@ -106,20 +115,20 @@ class App extends React.Component {
       
       this.setState({
         afterPayClicked: true
-      }, () => console.log('afterpay clicked', this.state.afterPayClicked))
+      })
     }
   }
   handleAfterPayXClick() {
     if (this.state.afterPayClicked) {
-      document.getElementsByClassName('app-body')[0].removeAttribute('id');
-      document.getElementsByClassName('app-component-body')[0].removeAttribute('id');
+      document.getElementsByTagName('div')[0].removeAttribute('id');
+      // document.getElementsByTagName('body')[0].removeAttribute('id');
       document.getElementsByClassName('picture-list-carousel')[0].removeAttribute('id');
       document.getElementById('new-top-arrow').removeAttribute('id')
       document.getElementsByClassName('arrow-container-top')[0].setAttribute('id', 'top-arrow');
 
       this.setState({
         afterPayClicked: false
-      }, () => console.log('afterpay x clicked', this.state.afterPayClicked))
+      })
     }
   }
   componentDidMount() {
@@ -160,6 +169,7 @@ class App extends React.Component {
                 colorLink={colorLink}/>
             </div>
           </div>
+          <div className='images-caption'>Hover your mouse over an image to zoom.</div>
         </div>
       </div>
     )

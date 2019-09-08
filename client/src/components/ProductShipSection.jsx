@@ -5,15 +5,15 @@ var ProductShipSection = () => {
     <div className='product-ship'>
       <div className='ship-item'>
         <div className='input'>
-          <input type='radio'></input>
-          <div className='caption'>SHIP THIS ITEM</div>
+          <input type='radio' checked='checked'></input>
+          <div id='ship-caption'>SHIP THIS ITEM</div>
         </div>
       </div>
       <div className='pick-up'>
         <div className='container'>
           <div className='input'>
             <input type='radio'></input>
-            <div className='caption'>PICK UP IN A STORE</div>
+            <div id='pick-up-caption'>PICK UP IN A STORE</div>
           </div>
         </div>
         <div className='select-size'>Please Select a size to check store availability</div>
