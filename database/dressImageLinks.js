@@ -1,3 +1,4 @@
+//`10, 13, 16, 22 multiple colors
 const dressImageLinks= {
   1: [
     'https://404-images-fec.s3-us-west-1.amazonaws.com/1_black_1.jpeg',

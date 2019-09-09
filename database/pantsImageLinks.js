@@ -1,3 +1,4 @@
+// 26 34 36 37 38 42 45
 const pantsImageLinks = {
   26: [
     'https://404-images-fec.s3-us-west-1.amazonaws.com/26_brown_1.jpeg',

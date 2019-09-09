@@ -1,8 +1,8 @@
 //seeder functions for various parts
 const {
-  productCategories, 
-  productBrandName, 
-  dressSubcategory, 
+  productCategories,
+  productBrandName,
+  dressSubcategory,
   dressAdjectives,
   skirtSubcategory,
   dressSkirtSize,
@@ -20,7 +20,7 @@ const generateProductNames = (brandNames, adjectives, subcategory, min, max) => 
   var newBrandName;
   var newAdjective;
   var newSubcategory;
-  for (var i = min; i < max; i++){
+  for (var i = min; i < max; i++) {
     newBrandName = brandNames[Math.floor(Math.random() * brandNames.length)] + ' ';
     newAdjective = adjectives[Math.floor(Math.random() * adjectives.length)] + ' ';
     newSubcategory = subcategory[Math.floor(Math.random() * subcategory.length)];
@@ -55,16 +55,29 @@ const getRandomArbitraryStarCount = (min, max) => {
 //   return storage;
 // }
 const assignCorrectImageLinks = (object, index) => {
-  let stringIndex = String(index);
-  return {
-    imageUrl: object[stringIndex]
+  return object[String(index)];
+}
+const colorGrabber = (array, colorArray) => {
+  //grab first from array
+  var firstLink = array[0]
+
+  var currentColor;
+
+  for (var i = 0; i < colorArray.length; i++) {
+    if (firstLink.indexOf(colorArray[i]) !== -1) {
+      currentColor = colorArray[i]
+    }
   }
-} 
+  return currentColor;
+  //split it and find the colors
+}
+
 
 module.exports = {
   generateProductNames,
   generateRandomValue,
   generateRandomNumber,
   getRandomArbitraryStarCount,
-  assignCorrectImageLinks
+  assignCorrectImageLinks,
+  colorGrabber
 }

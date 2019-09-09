@@ -1,3 +1,4 @@
+//51 53 55 59 60 63 64 71 
 const skirtsImageLinks = {
   51: [
     'https://404-images-fec.s3-us-west-1.amazonaws.com/51_multi_1.jpeg',
