@@ -56,15 +56,15 @@ const reviewStarImages = [
   '1 Star Image', '0.5 Star Image', '0 Star Image'
 ]
 const colors = [
-  'Black', 'Blue', 'Brown', 'Gray', 'Green', 
-  'Orange', 'Pink', 'Purple', 'Red', 'White', 
-  'Yellow'
+  'black', 'blue', 'brown', 'gray', 'green', 
+  'orange', 'pink', 'purple', 'red', 'white', 
+  'yellow'
 ]
-const colorImages = [
-  'BlackURL', 'BlueURL', 'BrownURL', 'GrayURL', 'GreenURL', 
-  'OrangeURL', 'PinkURL', 'PurpleURL', 'RedURL', 'WhiteURL', 
-  'YellowURL'
-]
+// const colorImages = [
+//   'BlackURL', 'BlueURL', 'BrownURL', 'GrayURL', 'GreenURL', 
+//   'OrangeURL', 'PinkURL', 'PurpleURL', 'RedURL', 'WhiteURL', 
+//   'YellowURL'
+// ]
 const fit = [
   'Petite', 'Standard', 'Plus'
 ]
@@ -99,7 +99,7 @@ module.exports = {
   pantsSizePlus,
   reviewStarImages,
   colors,
-  colorImages,
+  // colorImages,
   fit,
   beddingSubcategory,
   beddingSize,
