@@ -6,12 +6,12 @@ body {
   background-color: #fdfdf9;
 }
 .app-body {
-  padding: 3.5% 2.5% 10% 3.5%;
+  padding: 3.5% 2.5% 10% 15%;
 }
 .app-body .product-header {
   display: flex;
   padding-bottom: 2%;
-  justify-content: center;
+  /* margin-left: 30%; */
   /* z-index: 2; */
   color: #26262c;
 }
