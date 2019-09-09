@@ -19,7 +19,9 @@ let productDetailSchema = new mongoose.Schema({
   sizesUnavailable: String,
   sizePetiteUnavailable: String,
   sizePlusUnavailable: String,
-  image: [String]
+  image: {
+    imageUrl :[String]
+  }
 })
 
 let ProductDetail = mongoose.model('ProductDetail', productDetailSchema)

@@ -54,10 +54,17 @@ const getRandomArbitraryStarCount = (min, max) => {
 //   }
 //   return storage;
 // }
+const assignCorrectImageLinks = (object, index) => {
+  let stringIndex = String(index);
+  return {
+    imageUrl: object[stringIndex]
+  }
+} 
 
 module.exports = {
   generateProductNames,
   generateRandomValue,
   generateRandomNumber,
-  getRandomArbitraryStarCount
+  getRandomArbitraryStarCount,
+  assignCorrectImageLinks
 }

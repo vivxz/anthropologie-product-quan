@@ -26,10 +26,15 @@ const {
   generateProductNames,
   generateRandomValue,
   generateRandomNumber,
-  getRandomArbitraryStarCount
+  getRandomArbitraryStarCount,
+  assignCorrectImageLinks
 } = require('./seederFunctions.js')
 const fs = require('fs');
 const path = require('path');
+const { dressImageLinks } = require('./dressImageLinks.js');
+const { pantsImageLinks } = require('./pantsImageLinks.js');
+const { skirtsImageLinks } = require('./skirtsImageLinks.js');
+const { beddingImageLinks } = require('./beddingImageLinks.js');
 
 let dressesArr = generateProductNames(productBrandName, dressAdjectives, dressSubcategory, 0, 26);
 let pantsArr = generateProductNames(productBrandName, pantsAdjectives, pantsSubcategory, 0, 26);
@@ -60,7 +65,7 @@ const createDresses = () => {
     document.sizesUnavailable = generateRandomValue(dressSkirtSize);
     document.sizePetiteUnavailable = generateRandomValue(dressSkirtSizePetite);
     document.sizePlusUnavailable = generateRandomValue(dressSkirtSizePlus);
-    document.image = fileNames;
+    document.image = assignCorrectImageLinks(dressImageLinks, i);
     storage.push(document);
     document = {};
   }
@@ -84,7 +89,7 @@ const createPants = () => {
     document.sizesUnavailable = generateRandomValue(pantsSize);
     document.sizePetiteUnavailable = generateRandomValue(pantsSizePetite);
     document.sizePlusUnavailable = generateRandomValue(pantsSizePlus);
-    document.image = fileNames;
+    document.image = assignCorrectImageLinks(pantsImageLinks, i)
     storage.push(document);
     document = {};
   }
@@ -108,7 +113,7 @@ const createSkirts = () => {
     document.sizesUnavailable = generateRandomValue(dressSkirtSize);
     document.sizePetiteUnavailable = generateRandomValue(dressSkirtSizePetite);
     document.sizePlusUnavailable = generateRandomValue(dressSkirtSizePlus);
-    document.image = '';
+    document.image = assignCorrectImageLinks(skirtsImageLinks, i)
     storage.push(document);
     document = {};
   }
@@ -132,19 +137,19 @@ const createBedding = () => {
     document.sizesUnavailable = generateRandomValue(beddingSize);
     document.sizePetiteUnavailable = '';
     document.sizePlusUnavailable = '';
-    document.image = fileNames;
+    document.image = assignCorrectImageLinks(beddingImageLinks, i)
     storage.push(document);
     document = {};
   }
 }
 
-fs.readdir(path.join(__dirname, './productImages'), (err, files) => {
-  files.forEach(file => {
-    fileNames.push(file)
-  })
-  if (err){
-    console.log('error', err)
-  }
+// fs.readdir(path.join(__dirname, './productImages'), (err, files) => {
+//   files.forEach(file => {
+//     fileNames.push(file)
+//   })
+//   if (err){
+//     console.log('error', err)
+//   }
 createDresses();
 createPants();
 createSkirts();
@@ -152,5 +157,5 @@ createBedding();
 ProductDetail.insertMany(storage)
   .then((data) => console.log('insert many worked!', data))
   .catch((err) => console.log('Bulk insert failed', err))
-})
+// })
 
