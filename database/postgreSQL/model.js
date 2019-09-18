@@ -6,6 +6,7 @@ const Product = db.define('product', {
   productCategoryId: Sequelize.INTEGER,
   productCategory: Sequelize.STRING,
   price: Sequelize.STRING,
+  productName: Sequelize.STRING,
   brandName: Sequelize.STRING,
   onlineExclusive: Sequelize.BOOLEAN,
   reviewStarCount: Sequelize.STRING,
@@ -20,7 +21,6 @@ const Product = db.define('product', {
   sizePetiteUnavailable: Sequelize.STRING,
   sizePlusUnavailable: Sequelize.STRING,
   image: Sequelize.ARRAY(Sequelize.STRING)
-
 
 }, {
   timestamps: false

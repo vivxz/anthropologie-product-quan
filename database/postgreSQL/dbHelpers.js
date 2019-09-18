@@ -1,29 +1,29 @@
-const ProductDetail = require('./model.js');
+const Product = require('./model.js')
 
 const dbHelpers = {
   getting: (productCategoryId) => {
-    return ProductDetail.findOne({
-      productCategoryId
+    return Product.findOne({
+      where: { productCategoryId }
     })
   },
   gettingAll: () => {
-    return ProductDetail.find().limit(100)
+    return Product.findAll().limit(100)
   },
   posting: (productCategoryId, productCategory, productName, price, brandName, onlineExclusive, reviewStarCount, reviewCount, colors, colorImages, fit, sizeStandard, sizePetite, sizePlus, sizesUnavailable, sizePetiteUnavailable, sizePlusUnavailable, image) => {
-    return ProductDetail.create({
+    return Product.create({
       productCategoryId, productCategory, productName, price, brandName, onlineExclusive,
       reviewStarCount, reviewCount, colors, colorImages, fit, sizeStandard, sizePetite, sizePlus,
       sizesUnavailable, sizePetiteUnavailable, sizePlusUnavailable, image
     })
   },
   updating: (productCategoryId, productCategory, productName, price, brandName, onlineExclusive, reviewStarCount, reviewCount, colors, colorImages, fit, sizeStandard, sizePetite, sizePlus, sizesUnavailable, sizePetiteUnavailable, sizePlusUnavailable, image) => {
-    return ProductDetail.update({ productCategoryId, productCategory, productName, price, brandName, onlineExclusive, reviewStarCount, reviewCount, colors, colorImages, fit, sizeStandard, sizePetite, sizePlus, sizesUnavailable, sizePetiteUnavailable, sizePlusUnavailable, image }, {
+    return Product.update({ productCategoryId, productCategory, productName, price, brandName, onlineExclusive, reviewStarCount, reviewCount, colors, colorImages, fit, sizeStandard, sizePetite, sizePlus, sizesUnavailable, sizePetiteUnavailable, sizePlusUnavailable, image }, {
       where: { productCategoryId }
     })
   },
   deleting: (productCategoryId) => {
-    return ProductDetail.deleteOne({
-      productCategoryId
+    return Product.destroy({
+      where: { productCategoryId }
     })
   }
 }
