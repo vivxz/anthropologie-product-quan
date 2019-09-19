@@ -2,7 +2,6 @@ const db = require('./index.js');
 const mongoose = require('mongoose');
 
 let productDetailSchema = new mongoose.Schema({
-  count: Number,
   productCategoryId: Number,
   productCategory: String,
   productName: String,

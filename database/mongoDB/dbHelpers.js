@@ -17,17 +17,14 @@ const dbHelpers = {
     })
   },
   updating: (productCategoryId, productCategory, productName, price, brandName, onlineExclusive, reviewStarCount, reviewCount, colors, colorImages, fit, sizeStandard, sizePetite, sizePlus, sizesUnavailable, sizePetiteUnavailable, sizePlusUnavailable, image) => {
-    return ProductDetail.update({ productCategoryId, productCategory, productName, price, brandName, onlineExclusive, reviewStarCount, reviewCount, colors, colorImages, fit, sizeStandard, sizePetite, sizePlus, sizesUnavailable, sizePetiteUnavailable, sizePlusUnavailable, image }, {
-      where: { productCategoryId }
-    })
+    return ProductDetail.findOneAndUpdate({ productCategoryId }, { productCategoryId, productCategory, productName, price, brandName, onlineExclusive, reviewStarCount, reviewCount, colors, colorImages, fit, sizeStandard, sizePetite, sizePlus, sizesUnavailable, sizePetiteUnavailable, sizePlusUnavailable, image })
   },
   deleting: (productCategoryId) => {
     return ProductDetail.deleteOne({
       productCategoryId
     })
   }
-}
-
+};
 
 
 

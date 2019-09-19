@@ -1,9 +1,9 @@
 const Product = require('./model.js')
 
 const dbHelpers = {
-  getting: (productCategoryId) => {
+  getting: (id) => {
     return Product.findOne({
-      where: { productCategoryId }
+      where: { id }
     })
   },
   gettingAll: () => {
@@ -11,19 +11,17 @@ const dbHelpers = {
   },
   posting: (productCategoryId, productCategory, productName, price, brandName, onlineExclusive, reviewStarCount, reviewCount, colors, colorImages, fit, sizeStandard, sizePetite, sizePlus, sizesUnavailable, sizePetiteUnavailable, sizePlusUnavailable, image) => {
     return Product.create({
-      productCategoryId, productCategory, productName, price, brandName, onlineExclusive,
-      reviewStarCount, reviewCount, colors, colorImages, fit, sizeStandard, sizePetite, sizePlus,
-      sizesUnavailable, sizePetiteUnavailable, sizePlusUnavailable, image
+      productCategoryId, productCategory, productName, price, brandName, onlineExclusive, reviewStarCount, reviewCount, colors, colorImages, fit, sizeStandard, sizePetite, sizePlus, sizesUnavailable, sizePetiteUnavailable, sizePlusUnavailable, image
     })
   },
-  updating: (productCategoryId, productCategory, productName, price, brandName, onlineExclusive, reviewStarCount, reviewCount, colors, colorImages, fit, sizeStandard, sizePetite, sizePlus, sizesUnavailable, sizePetiteUnavailable, sizePlusUnavailable, image) => {
+  updating: (id, productCategoryId, productCategory, productName, price, brandName, onlineExclusive, reviewStarCount, reviewCount, colors, colorImages, fit, sizeStandard, sizePetite, sizePlus, sizesUnavailable, sizePetiteUnavailable, sizePlusUnavailable, image) => {
     return Product.update({ productCategoryId, productCategory, productName, price, brandName, onlineExclusive, reviewStarCount, reviewCount, colors, colorImages, fit, sizeStandard, sizePetite, sizePlus, sizesUnavailable, sizePetiteUnavailable, sizePlusUnavailable, image }, {
-      where: { productCategoryId }
+      where: { id }
     })
   },
-  deleting: (productCategoryId) => {
+  deleting: (id) => {
     return Product.destroy({
-      where: { productCategoryId }
+      where: { id }
     })
   }
 }
