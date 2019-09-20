@@ -26,8 +26,8 @@ const controller = {
     // updating(productCategoryId, productCategory, productName, price, brandName, onlineExclusive, reviewStarCount, reviewCount, colors, colorImages, fit, sizeStandard, sizePetite, sizePlus, sizesUnavailable, sizePetiteUnavailable, sizePlusUnavailable, image)
     // PSQL:
     updating(id, productCategoryId, productCategory, productName, price, brandName, onlineExclusive, reviewStarCount, reviewCount, colors, colorImages, fit, sizeStandard, sizePetite, sizePlus, sizesUnavailable, sizePetiteUnavailable, sizePlusUnavailable, image)
-    .then((data) => res.status(202).send('UPDATED'))
-    .catch((err) => res.status(402).send(err));
+      .then((data) => res.status(202).send('UPDATED'))
+      .catch((err) => res.status(402).send(err));
   },
   delete: (req, res) => {
     let { id } = req.params;

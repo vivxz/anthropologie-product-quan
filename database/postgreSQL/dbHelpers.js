@@ -1,13 +1,20 @@
 const Product = require('./model.js')
 
 const dbHelpers = {
-  getting: (id) => {
+  getting: (productCategoryId) => {
     return Product.findOne({
-      where: { id }
+      where: { productCategoryId }
     })
   },
   gettingAll: () => {
     return Product.findAll().limit(100)
+  },
+  gettingPopular: () => {
+    return Product.findAll({
+      order: [
+        sequelize.fn('max', sequelize.col('reviewCount'))
+      ]
+    })
   },
   posting: (productCategoryId, productCategory, productName, price, brandName, onlineExclusive, reviewStarCount, reviewCount, colors, colorImages, fit, sizeStandard, sizePetite, sizePlus, sizesUnavailable, sizePetiteUnavailable, sizePlusUnavailable, image) => {
     return Product.create({

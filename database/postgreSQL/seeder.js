@@ -97,7 +97,7 @@ const generateRandomValue = (array) => {
 const generateRandomNumber = (min, max) => {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return String(Math.floor(Math.random() * (max - min + 1)) + min);
+  return (Math.floor(Math.random() * (max - min + 1)) + min);
 }
 //random star count
 const getRandomArbitraryStarCount = (min, max) => {
@@ -129,7 +129,7 @@ const colorGrabber = (array, colorArray) => {
 
 let productArr = generateProductNames(productBrandName, adjectives, subcategory, 0, 26)
 
-let counter = 0;
+// let counter = 1;
 const createProducts = () => {
   // let storage = [];
   let document = {};
@@ -137,7 +137,7 @@ const createProducts = () => {
   // for (var i = 1; i <= 5; i++) {
   // document.count = counter++;
   // console.log(counter);
-  document.productCategoryId = counter++;
+  // document.productCategoryId = counter++;
   document.productCategory = productCategories[0];
   document.productName = productArr[generateRandomNumber(1, 8)];
   document.price = generateRandomNumber(100, 399);
@@ -166,30 +166,56 @@ const createProducts = () => {
 // createProducts()
 
 
-var file = fs.createWriteStream('test.csv');
+// var file = fs.createWriteStream('test.csv');
 
-file.write('productCategoryId | productCategory | productName | price | brandName | onlineExclusive | reviewStarCount | reviewCount | fit | sizeStandard | sizePetite | sizePlus | sizesUnavailable | sizePetiteUnavailable | sizePlusUnavailable | image | colors | colorImages' + '\n')
-for (var i = 0; i < 100; i++) {
-  for (var j = 0; j < 100000; j++) {
-    var product = createProducts();
-    // file.write('{' + product.sizePetite + '}')
-    file.write(product.productCategoryId + '|' + product.productCategory + '|' + product.productName + '|' + product.price + '|' + product.brandName + '|' + product.onlineExclusive + '|' + product.reviewStarCount + '|' + product.reviewCount + '|"{' + product.fit + '}"|"{' + product.sizeStandard + '}"|"{' + product.sizePetite + '}"|"{' + product.sizePlus + '}"|' + product.sizesUnavailable + '|' + product.sizePetiteUnavailable + '|' + product.sizePlusUnavailable + '|"{' + product.image + '}"|"{' + product.colors + '}"|"{' + product.colorImages + '}"');
-    file.write('\n', 'utf8');
-    // file.write('{' + product.colors + '}')
-  }
-}
+// file.write('productCategoryId | productCategory | productName | price | brandName | onlineExclusive | reviewStarCount | reviewCount | fit | sizeStandard | sizePetite | sizePlus | sizesUnavailable | sizePetiteUnavailable | sizePlusUnavailable | image | colors | colorImages' + '\n')
+// for (var i = 0; i < 100; i++) {
+//   for (var j = 0; j < 100000; j++) {
+//     var product = createProducts();
+//     // file.write('{' + product.sizePetite + '}')
+//     file.write(product.productCategoryId + '|' + product.productCategory + '|' + product.productName + '|' + product.price + '|' + product.brandName + '|' + product.onlineExclusive + '|' + product.reviewStarCount + '|' + product.reviewCount + '|"{' + product.fit + '}"|"{' + product.sizeStandard + '}"|"{' + product.sizePetite + '}"|"{' + product.sizePlus + '}"|' + product.sizesUnavailable + '|' + product.sizePetiteUnavailable + '|' + product.sizePlusUnavailable + '|"{' + product.image + '}"|"{' + product.colors + '}"|"{' + product.colorImages + '}"');
+//     file.write('\n', 'utf8');
+//     // file.write('{' + product.colors + '}')
+//   }
 // }
+// // }
 
-file.on('finish' , () => {
-  console.log('wrote all data to file');
-});
+// file.on('finish' , () => {
+//   console.log('wrote all data to file');
+// });
 
-// close the stream
-file.end();
+// // close the stream
+// file.end();
 
+const createProductsFile = () => {
+  let stream = fs.createWriteStream(__dirname + '/data.csv');
+  stream.write('productCategoryId|productCategory|productName|price|brandName|onlineExclusive|reviewStarCount|reviewCount|fit|sizeStandard|sizePetite|sizePlus|sizesUnavailable|sizePetiteUnavailable|sizePlusUnavailable|image|colors|colorImages' + '\n')
+  let i = 3;
+  write();
+  function write() {
+    do {
+      let product = createProducts();
+      product.productCategoryId = i;
+      i--;
+      if (i === 0) {
+        stream.end(product.productCategoryId + '|' + product.productCategory + '|' + product.productName + '|' + product.price + '|' + product.brandName + '|' + product.onlineExclusive + '|' + product.reviewStarCount + '|' + product.reviewCount + '|{' + product.fit + '}|{' + product.sizeStandard + '}|{' + product.sizePetite + '}|{' + product.sizePlus + '}|' + product.sizesUnavailable + '|' + product.sizePetiteUnavailable + '|' + product.sizePlusUnavailable + '|{' + product.image + '}|{' + product.colors + '}|{' + product.colorImages + '}' + '\n');
+      } else {
+        var ok = stream.write(product.productCategoryId + '|' + product.productCategory + '|' + product.productName + '|' + product.price + '|' + product.brandName + '|' + product.onlineExclusive + '|' + product.reviewStarCount + '|' + product.reviewCount + '|{' + product.fit + '}|{' + product.sizeStandard + '}|{' + product.sizePetite + '}|{' + product.sizePlus + '}|' + product.sizesUnavailable + '|' + product.sizePetiteUnavailable + '|' + product.sizePlusUnavailable + '|{' + product.image + '}|{' + product.colors + '}|{' + product.colorImages + '}' + '\n');
+      }
+    } while (i > 0 && ok) {
+      stream.once('drain', write);
+    }
+  }
+  stream.on('finish', () => {
+    console.log('All writes are now complete.');
+  });
+}
+
+
+// createReviewsCSV()
+createProductsFile()
 
 // ProductDetail.insertMany(storage)
 //   .then((data) => console.log('insert many worked!', data))
 //   .catch((err) => console.log('Bulk insert failed', err))
 // })
-

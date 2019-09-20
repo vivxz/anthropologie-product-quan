@@ -98,7 +98,7 @@ const generateRandomValue = (array) => {
 const generateRandomNumber = (min, max) => {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return String(Math.floor(Math.random() * (max - min + 1)) + min);
+  return (Math.floor(Math.random() * (max - min + 1)) + min);
 }
 //random star count
 const getRandomArbitraryStarCount = (min, max) => {
@@ -130,7 +130,6 @@ const colorGrabber = (array, colorArray) => {
 
 let productArr = generateProductNames(productBrandName, adjectives, subcategory, 0, 26)
 
-let counter = 1;
 const createProducts = () => {
   // let storage = [];
   let document = {};
@@ -138,14 +137,13 @@ const createProducts = () => {
   // for (var i = 1; i <= 5; i++) {
   // document.count = counter++;
   // console.log(counter);
-  document.productCategoryId = counter++;
   document.productCategory = productCategories[0];
   document.productName = productArr[generateRandomNumber(1, 8)];
   document.price = generateRandomNumber(100, 399);
   document.brandName = generateRandomValue(designers);
   document.onlineExclusive = generateRandomValue([true, false]);
   document.reviewStarCount = getRandomArbitraryStarCount(1, 5);
-  document.reviewCount = generateRandomNumber(5, 40);
+  document.reviewCount = generateRandomNumber(2, 40);
   document.fit = fit;
   document.sizeStandard = dressSkirtSize;
   document.sizePetite = dressSkirtSizePetite;
@@ -168,31 +166,31 @@ const createProducts = () => {
 
 
 
-var file = fs.createWriteStream('test.json');
+// var file = fs.createWriteStream('test.json');
 
-for (var i = 0; i < 100; i++) {
-  for (var j = 0; j < 100000; j++) {
-    if (i === 0 && j === 0) {
-      var products = JSON.stringify(createProducts())
-      file.write('[' + products + ',', 'utf8');
-      file.write('\n', 'utf8');
-    } else if (i === 99 && j === 999999) {
-      var products = JSON.stringify(createProducts())
-      file.write(products + ']', 'utf8');
-    } else {
-      var products = JSON.stringify(createProducts())
-      file.write(products, 'utf8');
-      file.write(',', 'utf8');
-      file.write('\n', 'utf8');
-    }
-  }
-  // console.log('iteration', i);
-}
+// for (var i = 0; i < 2; i++) {
+//   for (var j = 0; j < 5; j++) {
+//     if (i === 0 && j === 0) {
+//       var products = JSON.stringify(createProducts())
+//       file.write('[' + products + ',', 'utf8');
+//       file.write('\n', 'utf8');
+//     } else if (i === 99 && j === 999999) {
+//       var products = JSON.stringify(createProducts())
+//       file.write(products + ']', 'utf8');
+//     } else {
+//       var products = JSON.stringify(createProducts())
+//       file.write(products, 'utf8');
+//       file.write(',', 'utf8');
+//       file.write('\n', 'utf8');
+//     }
+//   }
+//   // console.log('iteration', i);
+// }
 
 // var file = fs.createWriteStream('test.json');
 
-// for (var i = 0; i < 100; i++) {
-//   for (var j = 0; j < 100000; j++) {
+// for (var i = 0; i < 20; i++) {
+//   for (var j = 0; j < 500000; j++) {
 //     // createProducts();
 //     var products = JSON.stringify(createProducts())
 //     file.write(products, 'utf8');
@@ -202,16 +200,44 @@ for (var i = 0; i < 100; i++) {
 // }
 
 
-file.on('finish', () => {
-  console.log('wrote all data to file');
-});
+
+const createProductsFile = () => {
+  let stream = fs.createWriteStream(__dirname + '/data.json');
+  let i = 10000000;
+  write();
+  function write() {
+    do {
+      let product = createProducts();
+      product.productCategoryId = i;
+      i--;
+      if (i === 0) {
+        stream.end(JSON.stringify(product) + '\n');
+      } else {
+        var ok = stream.write(JSON.stringify(product) + '\n');
+      }
+    } while (i > 0 && ok) {
+      stream.once('drain', write);
+    }
+  }
+  stream.on('finish', () => {
+    console.log('All writes are now complete.');
+  });
+}
+
+
+// createReviewsCSV()
+createProductsFile()
+
+
+// file.on('finish', () => {
+//   console.log('wrote all data to file');
+// });
 
 // close the stream
-file.end();
+// file.end();
 
 
 // ProductDetail.insertMany(storage)
 //   .then((data) => console.log('insert many worked!', data))
 //   .catch((err) => console.log('Bulk insert failed', err))
 // })
-
