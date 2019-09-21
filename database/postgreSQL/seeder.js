@@ -190,7 +190,7 @@ const createProducts = () => {
 const createProductsFile = () => {
   let stream = fs.createWriteStream(__dirname + '/data.csv');
   stream.write('productCategoryId|productCategory|productName|price|brandName|onlineExclusive|reviewStarCount|reviewCount|fit|sizeStandard|sizePetite|sizePlus|sizesUnavailable|sizePetiteUnavailable|sizePlusUnavailable|image|colors|colorImages' + '\n')
-  let i = 3;
+  let i = 10000000;
   write();
   function write() {
     do {

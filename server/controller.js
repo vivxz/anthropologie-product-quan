@@ -1,5 +1,5 @@
-// const { getting, posting, updating, deleting, gettingAll } = require('../database/mongoDB/dbHelpers.js');
-const { getting, posting, updating, deleting, gettingAll } = require('../database/postgreSQL/dbHelpers.js');
+const { getting, posting, updating, deleting, gettingAll } = require('../database/mongoDB/dbHelpers.js');
+// const { getting, posting, updating, deleting, gettingAll } = require('../database/postgreSQL/dbHelpers.js');
 
 const controller = {
   get: (req, res) => {

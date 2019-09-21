@@ -7,9 +7,11 @@ router
   .put(controller.put)
   .delete(controller.delete)
 
+
+
 router
   .route('/products/')
-  .post(controller.post)
   .get(controller.getAll)
+  .post(controller.post)
 
 module.exports = router;

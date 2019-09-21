@@ -9,13 +9,6 @@ const dbHelpers = {
   gettingAll: () => {
     return Product.findAll().limit(100)
   },
-  gettingPopular: () => {
-    return Product.findAll({
-      order: [
-        sequelize.fn('max', sequelize.col('reviewCount'))
-      ]
-    })
-  },
   posting: (productCategoryId, productCategory, productName, price, brandName, onlineExclusive, reviewStarCount, reviewCount, colors, colorImages, fit, sizeStandard, sizePetite, sizePlus, sizesUnavailable, sizePetiteUnavailable, sizePlusUnavailable, image) => {
     return Product.create({
       productCategoryId, productCategory, productName, price, brandName, onlineExclusive, reviewStarCount, reviewCount, colors, colorImages, fit, sizeStandard, sizePetite, sizePlus, sizesUnavailable, sizePetiteUnavailable, sizePlusUnavailable, image
