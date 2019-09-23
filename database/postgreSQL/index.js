@@ -2,13 +2,13 @@ const pg = require('pg');
 const Sequelize = require('sequelize');
 
 //OPTION 1:
-// const db = new Sequelize('postgres://vivs:postgres@localhost:5432/fec');
+const db = new Sequelize('postgres://vivs:postgres@localhost:5432/fec');
 
 //OPTION 2:
-const db = new Sequelize('fec', 'vivs', 'postgres', {
-  host: 'localhost',
-  dialect: 'postgres'
-});
+// const db = new Sequelize('fec', 'vivs', 'postgres', {
+//   host: 'localhost',
+//   dialect: 'postgres'
+// });
 
 
 db
@@ -17,3 +17,4 @@ db
   .catch((error) => console.log(error));
 
 module.exports = db;
+
