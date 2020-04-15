@@ -3,7 +3,7 @@
 > Horizontally scaled the back end of a legacy code base to increase throughput, decrease latency, and minimize error rate.
 
 ## Inherited From
-!https://github.com/fec-anthropologie/arthur_kim_product_detail_component](https://github.com/fec-anthropologie/arthur_kim_product_detail_component)
+![https://github.com/fec-anthropologie/arthur_kim_product_detail_component](https://github.com/fec-anthropologie/arthur_kim_product_detail_component)
 
 ## Table of Contents
 
@@ -24,7 +24,7 @@ To run this project, install it locally using yarn or npm:
 Node 6.13.0
 
 ## Demo
-![demo](./app_demo.gifhttps://vivs-portfolio.s3-us-west-1.amazonaws.com/anthro.png)
+![demo](https://vivs-portfolio.s3-us-west-1.amazonaws.com/anthro.png)
 
 ## Development
 * [react.js](https://www.npmjs.com/package/react) - The official React.js website
