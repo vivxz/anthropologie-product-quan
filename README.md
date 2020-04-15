@@ -3,7 +3,7 @@
 > Horizontally scaled the back end of a legacy code base to increase throughput, decrease latency, and minimize error rate.
 
 ## Inherited From
-![https://github.com/fec-anthropologie/arthur_kim_product_detail_component](https://github.com/fec-anthropologie/arthur_kim_product_detail_component)
+https://github.com/fec-anthropologie/arthur_kim_product_detail_component  
 
 ## Table of Contents
 
